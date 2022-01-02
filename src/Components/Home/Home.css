@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Freckle+Face&display=swap');
+
+body {
+    text-align: center;
+}
+
+h1 {
+  font-family: 'Bungee', cursive;
+  font-size: 3.4em;
+  
+  text-shadow: 2px 0 0 var(--color1), -2px 0 0 var(--color2), 0 2px 0 var(--color1), 0 -2px 0 var(--color1), 1px 1px var(--color5), -1px -1px 0 var(--color1), 1px -1px 0 var(--color2), -1px 1px 0 var(--color1);
+}
+
+#title {
+ /* font-family: 'Bungee', cursive; */
+ 
+ font-family: 'Freckle Face', cursive;
+ font-size: 3em;
+ text-shadow: 2px 0 0 var(--color1), -2px 0 0 var(--color2), 0 2px 0 var(--color3), 0 -2px 0 var(--color1), 1px 1px var(--color5), -1px -1px 0 var(--color1), 1px -1px 0 var(--color2), -1px 1px 0 var(--color3);
+}
+
+#cards {
+    display: flex;
+    justify-content: center;
+    gap: 10%;
+    margin-top: 5%;
+}
+
+.card {
+    font-family: 'Bungee', cursive;
+    font-size: 2em;
+    width: 20vw;
+    height: 20vh;
+  /*  font-family: 'Exo', sans-serif; */
+    display: flex;           /* center in div */
+    justify-content: center; /*               */
+    align-content: center;   /*               */
+    flex-direction: column;  /*               */
+    
+ /*   margin-left: 5%;
+    margin-right: 5%;    */
+    border: 10px inset var(--color3);
+    border-radius: 5em;
+    color: var(--color3);
+    background-color: var(--color2);
+    box-shadow: 0.6em 0.6em 2em 0.5em var(--color1), 0 0 0.4em 0.4em var(--color1); 
+    transition: color .25s, background-color .3s, box-shadow .4s, font-weight .35s, border .3s;
+    animation-name: cardanimation;
+    animation-duration: 16s;
+    animation-iteration-count: infinite;
+  }
+  
+  .card:hover {
+    color: var(--color4);
+    border: 12px outset var(--color4);
+    background-color: var(--color1);
+    box-shadow: 0 0 0.4em 0.4em var(--color4); 
+    font-weight: bold;
+  }
+  
+  .card:active {
+    color: var(--color3);
+    background-color: var(--color1);
+    box-shadow: 0 0 0.4em 0.4em var(--color4);
+    font-weight: bold;
+    }
+
+      /* The animation code */
+  @keyframes cardanimation {
+    0%   {background-color:var(--color1);}
+    10%  {background-color:var(--color2);}
+    20%  {background-color:var(--color1);}
+    70%  {background-color:var(--color2);}
+    75%  {background-color: transparent;}
+    80%  {background-color:var(--color2);}
+    100% {background-color:var(--color1);}
+  }
+
+  #soundsystemcard {
+    opacity: 0.5;
+  }

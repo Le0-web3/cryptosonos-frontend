@@ -1,0 +1,28 @@
+#navbar {
+    width: 100vw;
+    color:var(--color3);
+    background-color: var(--color1);
+    display: flex;
+    flex-direction: row;
+   /* overflow: hidden; */
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    left: 0;
+    text-decoration: none;
+}
+
+.navbarItem {
+    width: 10vw;
+    padding: 0.5%;
+}
+
+.navbarItem:hover { 
+    text-decoration: none; 
+    color: var(--color4); 
+    background-color: var(--color2);
+    font-weight: bold;
+ }
+
+ #soundsystemnavb {
+     opacity: 0.99;
+ }

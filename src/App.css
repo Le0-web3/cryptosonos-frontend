@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo:wght@300&display=swap');
+
+:root {
+  --color1: #000000;
+  --color2: #323232;
+  --color3: #FF1E56;
+  --color4: #FFAC41;
+  --color5: #575757;
+}
+
+body {
+  font-family: 'Exo', sans-serif;
+  background: repeating-radial-gradient(circle at center, var(--color1) 0, var(--color3), var(--color2) 100%);
+  min-height: 90vh; /* fix for body bigger than viewport. do not set width */
+  color: var(--color4);
+}
+
+#content {
+  margin-top: 3%;
+}
