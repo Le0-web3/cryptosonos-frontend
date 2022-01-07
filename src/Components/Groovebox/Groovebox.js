@@ -51,6 +51,11 @@ var playersjungle = [jungle01, jungle02, jungle03, jungle04, jungle05, jungle06,
 
 var players = playerstekno;
 
+// new
+var namestekno = ["kick 1", "kick 2", "jump", "pump 1", "pump 2", "hat", "crash", "rim"];
+var namesdub = ["kick 1", "snare", "hat", "rim", "woodblock", "guitar", "synare", "crash"];
+var namesjungle = ["kick 1", "kick 2", "snare 1", "snare 2", "snare 3", "hat 1", "hat 2", "hat 3"];
+
 const moodArray = ["tekno", "dub", "jungle"];
 
 let PlayStopButton;
@@ -64,6 +69,7 @@ const [started, setStarted] = useState(false);
 const [isOn, setIsOn] = useState(false);
 const [beat, setBeat] = useState(0);
 const [display, setDisplay] = useState("click to start");
+const [names, setNames] = useState(namestekno);
 
 // -----   USE EFFECT   -----
 /*     players     */
@@ -81,6 +87,17 @@ useEffect(() => {
     } 
     */
   }, [props.mood] )
+
+/*     names     */
+useEffect(() => {
+  if(props.mood == "tekno") {
+    setNames(namestekno);
+  } else if(props.mood == "dub") {
+    setNames(namesdub);
+  } else if(props.mood == "jungle") {
+    setNames(namesjungle);
+  }
+}, [props.mood] )
 
   /*     PlayStopButton     */
   useEffect(() => {
@@ -238,7 +255,7 @@ const configLoop = () => {
         )}
 
         <form className="volume">
-            <label for="points"></label>
+            <label for="points">{names[i]}</label>
             <input type="range" name={i} id="insVolume" min="-40" max="0" step="0.01" className="slider" onInput={handleVolumeChange} onChange={handleVolumeChange}></input>
         </form>
         </div>
