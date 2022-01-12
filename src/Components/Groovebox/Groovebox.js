@@ -51,7 +51,6 @@ var playersjungle = [jungle01, jungle02, jungle03, jungle04, jungle05, jungle06,
 
 var players = playerstekno;
 
-// new
 var namestekno = ["kick 1", "kick 2", "jump", "pump 1", "pump 2", "hat", "crash", "rim"];
 var namesdub = ["kick 1", "snare", "hat", "rim", "woodblock", "guitar", "synare", "crash"];
 var namesjungle = ["kick 1", "kick 2", "snare 1", "snare 2", "snare 3", "hat 1", "hat 2", "hat 3"];
@@ -199,6 +198,25 @@ const handleVolumeChange = e => {
   const { name, value } = e.target;
   volumeNode[name].volume.value = value;
 };
+
+// NEW
+/*     Reset sequence     */
+// !!!!! fix needed, doesnt reset the sound
+/*
+const resetSequence = () => {
+  let emptyArr = [
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  ];
+  props.setSequence(emptyArr);
+};
+*/
   
 // -----   THE LOOP   -----
 /* trick here : beatvar and beat are the same but we need to use beatvat(global var) for the audio
@@ -230,6 +248,9 @@ const configLoop = () => {
         <div id="bpmdisplay">BPM : {Math.floor(Tone.Transport.bpm.value)}</div>
         <input type="range" id="points" min="60" max="320" value={props.bpm} className="slider" onInput={handleBpmChange} onChange={handleBpmChange}></input>
       </form>
+      {/* 
+      <button id="resetbutton" onClick={resetSequence}>Reset Sequence</button>
+      */}
       <div id="displaywrapper">
         <div id="display">
           {props.mood} - {display}

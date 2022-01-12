@@ -57,6 +57,15 @@
 .inventoryLine {
     display: flex;
     align-items: center;
+    width: 100%;
+}
+
+.boxbutton {
+    zoom: 50%;
+}
+
+.inventoryNumber {
+    font-size: 0.7em;
 }
 
 #topteknobutton {
@@ -87,6 +96,78 @@
     background-image: url(../../pictures/subtekno.png);
     height: 165px;
     width: 90px;
+    background-size: 100%;
+    margin: 1%;
+}
+
+#topdubbutton {
+    background-image: url(../../pictures/topdub.png);
+    height: 30px;
+    width: 145px;
+    background-size: 100%;
+    margin: 1%;
+}
+
+#middubbutton {
+    background-image: url(../../pictures/middub.png);
+    height: 90px;
+    width: 80px;
+    background-size: 100%;
+    margin: 1%;
+}
+
+#kickdubbutton {
+    background-image: url(../../pictures/kickdub.png);
+    height: 70px;
+    width: 80px;
+    background-size: 100%;
+    margin: 1%;
+}
+
+#subdubbutton {
+    background-image: url(../../pictures/subdub.png);
+    height: 165px;
+    width: 90px;
+    background-size: 100%;
+    margin: 1%;
+}
+
+#topjunglebutton {
+    background-image: url(../../pictures/topjungle.png);
+    height: 30px;
+    width: 145px;
+    background-size: 100%;
+    margin: 1%;
+}
+
+#midjunglebutton {
+    background-image: url(../../pictures/midjungle.png);
+    height: 90px;
+    width: 80px;
+    background-size: 100%;
+    margin: 1%;
+}
+
+#kickjunglebutton {
+    background-image: url(../../pictures/kickjungle.png);
+    height: 70px;
+    width: 80px;
+    background-size: 100%;
+    margin: 1%;
+}
+
+#subjunglebutton {
+    background-image: url(../../pictures/subjungle.png);
+    height: 165px;
+    width: 90px;
+    background-size: 100%;
+    margin: 1%;
+}
+
+#topteknobuilded {
+    background-image: url(../../pictures/toptekno.png);
+    height: 30px;
+    width: 145px;
     background-size: 100%;
     margin: 1%;
 }

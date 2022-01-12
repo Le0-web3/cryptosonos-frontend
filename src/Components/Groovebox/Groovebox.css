@@ -146,11 +146,10 @@ form {
     border-radius: 50%;
 }
 
-#savebutton {
-    grid-area: save;
+#resetbutton {
     font-family: 'Exo', sans-serif;
-    width: 5vw;
-    height: 5vh;
+    width: 10em;
+    height: 3em;
     border: 1px solid var(--color1);
     justify-self: center; /* horizontal align in grid */
     align-self: center; /* vertical align in grid */
@@ -162,13 +161,13 @@ form {
     transition: color .3s, background-color .2s, box-shadow .25s; /* Animation */
 }
 
-#savebutton:hover {
+#resetbutton:hover {
     color: var(--color4);
     background-color: var(--color1);
     box-shadow: 0 0 0.4em 0.4em var(--color4); 
 }
 
-#savebutton:active {
+#resetbutton:active {
     color: var(--color3);
     background-color: var(--color1);
     box-shadow: 0 0 0.4em 0.4em var(--color4); 
