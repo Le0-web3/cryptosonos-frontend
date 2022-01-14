@@ -17,26 +17,47 @@ let topteknonumber = props.builded["top"]["tekno"];
 let topdubnumber = props.builded["top"]["dub"];
 let topjunglenumber = props.builded["top"]["jungle"];
 let topTeknoString = "<div id='topteknobuilded'></div>";
+let myTeknoArr = [];
+let myDubArr = [];
+let myJungleArr = [];
 
+for(let i = 0; i < topteknonumber; i++) {
+    myTeknoArr.push(i);
+}
+
+for(let i = 0; i < topdubnumber; i++) {
+  myDubArr.push(i);
+}
+
+for(let i = 0; i < topjunglenumber; i++) {
+  myJungleArr.push(i);
+}
 
 // faut faire des Cards
 
-if(topteknonumber > 0) {
-    if (topteknonumber == 1) {
-        return <div>Image 1</div>
-    }  // if == 1
-    else if (topteknonumber == 2) {
-        return <div>Image 1 Image 2</div>
-    }
-} // if < 0
- else {
+    // Render Methods
+    return (
 
+    <>
+    {myTeknoArr.map((number, index) => (
+      <div key={number} id="buildedtopwrapper">
+        <img src={toptekno} alt={number} className="topboxes" />
+      </div>
+    ))}
 
+    {myDubArr.map((number, index) => (
+      <div key={number} id="buildedtopwrapper">
+        <img src={topdub} alt={number} className="topboxes" />
+      </div>
+    ))}
 
-    return     <div>
-    
-                </div>;
-}
+    {myJungleArr.map((number, index) => (
+      <div key={number} id="buildedtopwrapper">
+        <img src={topjungle} alt={number} className="topboxes" />
+      </div>
+    ))}
+    </>
+    );
 
 } // renderTop
 
@@ -44,9 +65,10 @@ useEffect(() => {
     topArray = Object.entries(props.builded.top);
   }, [props.builded] )
 
+
     return (
         
-    <div>
+    <div id="rendertop">
         {renderTop()}
     </div>
 

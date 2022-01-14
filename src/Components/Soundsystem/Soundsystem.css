@@ -18,6 +18,8 @@
     height: 60px;
     width: 580px;
     background-color: lightcoral;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 
 #buildmid {
@@ -164,10 +166,14 @@
     margin: 1%;
 }
 
-#topteknobuilded {
-    background-image: url(../../pictures/toptekno.png);
-    height: 30px;
-    width: 145px;
-    background-size: 100%;
-    margin: 1%;
+.topboxes {
+    height: 60px;
+    width: 290px;
+    margin: 0;
+    padding: 0;
+}
+
+#rendertop {
+    display: flex;
+    flex-direction: row;
 }
