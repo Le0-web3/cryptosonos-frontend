@@ -13,7 +13,7 @@ import subjungle from "../../pictures/subjungle.png";
 import kickjungle from "../../pictures/kickjungle.png";
 import midjungle from "../../pictures/midjungle.png";
 import topjungle from "../../pictures/topjungle.png";
-import BuildedTop from './BuildedTop';
+import BuildedSono from './BuildedSono';
 
 const initialBuildedState = {
     top: {
@@ -132,10 +132,7 @@ When he drags drops (or click)s we update builded and remaining.
 
     <div id="soundsystem-content">
         <div id="build">
-            <div id="buildtop"><BuildedTop builded={builded} /></div>
-            <div id="buildmid"></div>
-            <div id="buildkick"></div>
-            <div id="buildsub"></div>
+            <div><BuildedSono builded={builded} /></div>
         </div>
         <div id="inventory">
             <div className="category">Tekno</div>
