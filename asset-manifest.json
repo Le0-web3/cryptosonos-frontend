@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/cryptosonos-frontend/static/css/main.842c7ed6.chunk.css",
-    "main.js": "/cryptosonos-frontend/static/js/main.71295b37.chunk.js",
-    "main.js.map": "/cryptosonos-frontend/static/js/main.71295b37.chunk.js.map",
+    "main.css": "/cryptosonos-frontend/static/css/main.2399bfb0.chunk.css",
+    "main.js": "/cryptosonos-frontend/static/js/main.3a70c532.chunk.js",
+    "main.js.map": "/cryptosonos-frontend/static/js/main.3a70c532.chunk.js.map",
     "runtime-main.js": "/cryptosonos-frontend/static/js/runtime-main.b92b5610.js",
     "runtime-main.js.map": "/cryptosonos-frontend/static/js/runtime-main.b92b5610.js.map",
-    "static/js/2.538d62b8.chunk.js": "/cryptosonos-frontend/static/js/2.538d62b8.chunk.js",
-    "static/js/2.538d62b8.chunk.js.map": "/cryptosonos-frontend/static/js/2.538d62b8.chunk.js.map",
+    "static/js/2.7a7dd56d.chunk.js": "/cryptosonos-frontend/static/js/2.7a7dd56d.chunk.js",
+    "static/js/2.7a7dd56d.chunk.js.map": "/cryptosonos-frontend/static/js/2.7a7dd56d.chunk.js.map",
     "static/js/3.9a90cf1e.chunk.js": "/cryptosonos-frontend/static/js/3.9a90cf1e.chunk.js",
     "static/js/3.9a90cf1e.chunk.js.map": "/cryptosonos-frontend/static/js/3.9a90cf1e.chunk.js.map",
     "index.html": "/cryptosonos-frontend/index.html",
-    "static/css/main.842c7ed6.chunk.css.map": "/cryptosonos-frontend/static/css/main.842c7ed6.chunk.css.map",
-    "static/js/2.538d62b8.chunk.js.LICENSE.txt": "/cryptosonos-frontend/static/js/2.538d62b8.chunk.js.LICENSE.txt"
+    "static/css/main.2399bfb0.chunk.css.map": "/cryptosonos-frontend/static/css/main.2399bfb0.chunk.css.map",
+    "static/js/2.7a7dd56d.chunk.js.LICENSE.txt": "/cryptosonos-frontend/static/js/2.7a7dd56d.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.b92b5610.js",
-    "static/js/2.538d62b8.chunk.js",
-    "static/css/main.842c7ed6.chunk.css",
-    "static/js/main.71295b37.chunk.js"
+    "static/js/2.7a7dd56d.chunk.js",
+    "static/css/main.2399bfb0.chunk.css",
+    "static/js/main.3a70c532.chunk.js"
   ]
 }
