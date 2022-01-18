@@ -1,18 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './Soundsystem.css';
 // import subtekno from 'public/pictures/subtekno.png'; // Tell webpack this JS file uses this image
-import subtekno from "../../pictures/subtekno.png";
-import kicktekno from "../../pictures/kicktekno.png";
-import midtekno from "../../pictures/midtekno.png";
-import toptekno from "../../pictures/toptekno.png";
-import subdub from "../../pictures/subdub.png";
-import kickdub from "../../pictures/kickdub.png";
-import middub from "../../pictures/middub.png";
-import topdub from "../../pictures/topdub.png";
-import subjungle from "../../pictures/subjungle.png";
-import kickjungle from "../../pictures/kickjungle.png";
-import midjungle from "../../pictures/midjungle.png";
-import topjungle from "../../pictures/topjungle.png";
+
 import BuildedSono from './BuildedSono';
 
 const initialBuildedState = {
@@ -118,6 +107,53 @@ When he drags drops (or click)s we update builded and remaining.
 
     }
 
+const unBuild = () => {
+    setBuilded({
+        top: {
+            tekno: 0,
+            dub: 0,
+            jungle: 0
+        },
+        mid : {
+            tekno: 0,
+            dub: 0,
+            jungle: 0  
+        },
+        kick : {
+            tekno: 0,
+            dub: 0,
+            jungle: 0  
+        },
+        sub : {
+            tekno: 0,
+            dub: 0,
+            jungle: 0  
+        }
+    })
+    setRemaining({
+        top: {
+            tekno: 4,
+            dub: 2,
+            jungle: 1
+        },
+        mid : {
+            tekno: 2,
+            dub: 3,
+            jungle: 7  
+        },
+        kick : {
+            tekno: 3,
+            dub: 2,
+            jungle: 1  
+        },
+        sub : {
+            tekno: 3,
+            dub: 10,
+            jungle: 3  
+        }
+    })
+}
+
 // -----   USE EFFECT   -----
     /*     refresh     */
     // !!!!! not working
@@ -130,6 +166,7 @@ When he drags drops (or click)s we update builded and remaining.
 
     return (
 
+<div>
     <div id="soundsystem-content">
         <div id="build">
             <div><BuildedSono builded={builded} /></div>
@@ -186,10 +223,10 @@ When he drags drops (or click)s we update builded and remaining.
                     <button className="boxbutton" id="subjunglebutton" box="sub" mood="jungle" aria-label="subjungle" onClick={handleClick}></button>
                     <div className="inventoryNumber"> x {remaining.sub.jungle}</div>
                 </div>
-
         </div>
-        
     </div>
+    <button id="resetbutton" onClick={unBuild}>Unbuild</button>
+</div>
 
     );
 }
