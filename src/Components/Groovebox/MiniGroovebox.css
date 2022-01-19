@@ -1,0 +1,60 @@
+#mini-groove-box {
+    position: relative;
+    width: 8vw;
+        padding: 0.5%;
+     margin-left: auto;
+     margin-right: auto;
+ /* margin-left: -40vw; */
+     background: repeating-radial-gradient(circle at center, var(--color1) 0, var(--color2) 100%);
+     border-radius: 2%;
+     
+     box-shadow: 1em 1em 2em 0.5em var(--color1), 0 0 0.4em 0.4em var(--color1); 
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     opacity: 70%;
+     
+ }
+ 
+ #minidisplaywrapper {
+     align-items: center;
+     margin-bottom: 5%;
+
+ }
+ 
+ #minidisplay {
+     justify-self: center; /* horizontal align in grid */
+     align-self: center; /* vertical align in grid */
+     text-align: center;
+     color: var(--color2);
+     background-color: var(--color4);
+     width: 3vw;
+     margin: 0;
+     padding: 1%;
+     border-radius: 3%;
+     
+     box-shadow: 0.6em 0.6em 2em 0.5em var(--color1), 0 0 0.4em 0.4em var(--color1); 
+     
+ }
+ 
+ .miniswitchesandvolume {
+     justify-self: center;
+     align-self: center;
+ }
+ 
+ .minigridrow {
+     display: flex;
+     margin: 0;
+ }
+ 
+ .miniswitch {
+     width: 0.4vw;
+     height: 0.7vh;
+     border: 1px solid var(--color1);
+     text-align: center;
+     margin: 0;
+     border-radius: 1%;
+     color: var(--color1);
+     
+     box-shadow: 0.06em 0.06em 0.2em 0.05em var(--color1), 0 0 0.04em 0.04em var(--color1); 
+ }

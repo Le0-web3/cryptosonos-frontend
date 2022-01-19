@@ -34,7 +34,13 @@ const App = () => {
   // RENDER
   const renderContent = () => {
     if (view == "home") {
-      return <Home handleClickView={handleClickView} />;
+      return <Home handleClickView={handleClickView}
+      mood={mood}
+      setMood={setMood}
+      bpm={bpm}
+      setBpm={setBpm}
+      sequence={sequence}
+      setSequence={setSequence} />;
     }
     else if(view == "groovebox") {
       return <Groovebox 
