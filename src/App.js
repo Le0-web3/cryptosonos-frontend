@@ -21,6 +21,28 @@ const App = () => {
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
   ]);
+  const [builded, setBuilded] = useState({
+    top: {
+        tekno: 0,
+        dub: 0,
+        jungle: 0
+    },
+    mid : {
+        tekno: 0,
+        dub: 0,
+        jungle: 0  
+    },
+    kick : {
+        tekno: 0,
+        dub: 0,
+        jungle: 0  
+    },
+    sub : {
+        tekno: 0,
+        dub: 0,
+        jungle: 0  
+    }
+  });
 
 
 
@@ -40,7 +62,9 @@ const App = () => {
       bpm={bpm}
       setBpm={setBpm}
       sequence={sequence}
-      setSequence={setSequence} />;
+      setSequence={setSequence}
+      builded={builded}
+      setBuilded={setBuilded} />;
     }
     else if(view == "groovebox") {
       return <Groovebox 
@@ -53,7 +77,10 @@ const App = () => {
       />;
     }
     else if(view == "soundsystem") {
-      return <Soundsystem />;
+      return <Soundsystem
+      builded={builded}
+      setBuilded={setBuilded}
+       />;
     }
   } // rendercontent
 

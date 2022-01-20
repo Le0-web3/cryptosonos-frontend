@@ -4,29 +4,6 @@ import './Soundsystem.css';
 
 import BuildedSono from './BuildedSono';
 
-const initialBuildedState = {
-    top: {
-        tekno: 0,
-        dub: 0,
-        jungle: 0
-    },
-    mid : {
-        tekno: 0,
-        dub: 0,
-        jungle: 0  
-    },
-    kick : {
-        tekno: 0,
-        dub: 0,
-        jungle: 0  
-    },
-    sub : {
-        tekno: 0,
-        dub: 0,
-        jungle: 0  
-    }
-}
-
 //     for testing purpose, will have to get from SC
 const userInventory = {
     top: {
@@ -51,7 +28,7 @@ const userInventory = {
     }
 }
 
-const Soundsystem = () => {
+const Soundsystem = (props) => {
 
 // -----   USE STATE   -----
 
@@ -59,8 +36,8 @@ const Soundsystem = () => {
 We use remaining for display.
 When he drags drops (or click)s we update builded and remaining.
 */
-
-    const [builded, setBuilded] = useState(initialBuildedState);
+    /* moving this state in App
+    const [builded, setBuilded] = useState(initialBuildedState); */
     const [remaining, setRemaining] = useState(userInventory);
     const [refresh, setRefresh] = useState(0);
 
@@ -71,10 +48,10 @@ When he drags drops (or click)s we update builded and remaining.
         let targetmood = _target.attributes.mood.value;
     //if top and top builded < 2, add to builded and remove 1 from remaining
         if(targetbox == "top") {
-            if(builded[targetbox]["tekno"] + builded[targetbox]["dub"] + builded[targetbox]["jungle"] < 2 && remaining[targetbox][targetmood] > 0) {
-                let varBuilded = builded;
+            if(props.builded[targetbox]["tekno"] + props.builded[targetbox]["dub"] + props.builded[targetbox]["jungle"] < 2 && remaining[targetbox][targetmood] > 0) {
+                let varBuilded = props.builded;
                 varBuilded[targetbox][targetmood] += 1; 
-                setBuilded(varBuilded);
+                props.setBuilded(varBuilded);
                 let varRemaining = remaining;
                 varRemaining[targetbox][targetmood] -= 1; 
                 setRemaining(varRemaining);
@@ -83,10 +60,10 @@ When he drags drops (or click)s we update builded and remaining.
 
     //if not top and top builded < 4, add to builded and remove 1 from remaining
     if(targetbox != "top") {
-        if(builded[targetbox]["tekno"] + builded[targetbox]["dub"] + builded[targetbox]["jungle"] < 4 && remaining[targetbox][targetmood] > 0) {
-            let varBuilded = builded;
+        if(props.builded[targetbox]["tekno"] + props.builded[targetbox]["dub"] + props.builded[targetbox]["jungle"] < 4 && remaining[targetbox][targetmood] > 0) {
+            let varBuilded = props.builded;
             varBuilded[targetbox][targetmood] += 1; 
-            setBuilded(varBuilded);
+            props.setBuilded(varBuilded);
             let varRemaining = remaining;
             varRemaining[targetbox][targetmood] -= 1; 
             setRemaining(varRemaining);
@@ -100,7 +77,7 @@ When he drags drops (or click)s we update builded and remaining.
 */
 
         console.log("builded : ")
-        console.log(builded)
+        console.log(props.builded)
         console.log("remaining : ")
         console.log(remaining)
         setRefresh(refresh+1) // trick for refreshing
@@ -108,7 +85,7 @@ When he drags drops (or click)s we update builded and remaining.
     }
 
 const unBuild = () => {
-    setBuilded({
+    props.setBuilded({
         top: {
             tekno: 0,
             dub: 0,
@@ -169,7 +146,7 @@ const unBuild = () => {
 <div>
     <div id="soundsystem-content">
         <div id="build">
-            <div><BuildedSono builded={builded} /></div>
+            <div><BuildedSono builded={props.builded} /></div>
         </div>
         <div id="inventory">
             <div className="category">Tekno</div>
