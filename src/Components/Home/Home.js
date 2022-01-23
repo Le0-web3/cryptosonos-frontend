@@ -11,7 +11,7 @@ const Home = (props) => {
     <div>
         <h1>Welcome to <div id="title">Crypto Sonos</div></h1>
         <div id="cards">
-            <div className="buttoncolumn">        
+            <div className="buttoncolumn" id="grooveboxarea">        
                 <MiniGroovebox    
                     id="grooveboxbuttonimage"    
                     mood={props.mood}
@@ -19,7 +19,7 @@ const Home = (props) => {
                     />
                 <div className="card" id="grooveboxcard" onClick={(e) => {props.handleClickView(e);}}>Groovebox</div>
             </div>
-            <div className="buttoncolumn">     
+            <div className="buttoncolumn" id="soundsystemarea">     
                 <div className="sonoimage"> 
                 <BuildedSono    
                     id="soundsystembuttonimage"    
@@ -29,6 +29,7 @@ const Home = (props) => {
                 </div>  
                 <div className="card" id="soundsystemcard" onClick={(e) => {props.handleClickView(e);}}>Sound System</div>
             </div>      
+            <div className="card" id="hostarea">Host a Party !</div>
 
         </div>
 

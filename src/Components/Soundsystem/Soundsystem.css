@@ -1,8 +1,6 @@
 #soundsystem-content {
     display: flex;
     justify-content: space-around;
-    border: 1px solid black;
-    color: black;
 }
 
 #build {
@@ -15,7 +13,6 @@
 }
 
 #inventory {
-    background-color: pink;
   /*  height: 710px; */
     width: 40vh;
     display: flex;
@@ -26,16 +23,20 @@
 }
 
 .category {
-    background-color: lightblue;
+    background-color: var(--color2);
+    color: var(--color4);
+    border-radius: 5px;
     padding: 0.5em 0 0.5em 0;
     width: 100%;
     font-size: 0.7em;
+    font-weight: bold;
 }
 
 .inventoryLine {
     display: flex;
     align-items: center;
     width: 100%;
+    font-weight: bold;
 }
 
 .boxbutton {
