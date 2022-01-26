@@ -32,13 +32,13 @@ var tekno08 = new Tone.Player("https://raw.githubusercontent.com/luckyclutcher/c
 var playerstekno = [tekno01, tekno02, tekno03, tekno04, tekno05, tekno06, tekno07, tekno08];
 
 var dub01 = new Tone.Player("https://raw.githubusercontent.com/luckyclutcher/cryptosonos-frontend/18443d138626512b1a06aeb1d043ee4510e529da/public/samples/dub01.mp3").connect(vol01);
-var dub02 = new Tone.Player("https://raw.githubusercontent.com/luckyclutcher/cryptosonos-frontend/18443d138626512b1a06aeb1d043ee4510e529da/public/samples/dub02.mp3").connect(vol02);
-var dub03 = new Tone.Player("https://raw.githubusercontent.com/luckyclutcher/cryptosonos-frontend/18443d138626512b1a06aeb1d043ee4510e529da/public/samples/dub03.mp3").connect(vol03);
-var dub04 = new Tone.Player("https://raw.githubusercontent.com/luckyclutcher/cryptosonos-frontend/18443d138626512b1a06aeb1d043ee4510e529da/public/samples/dub04.mp3").connect(vol04);
-var dub05 = new Tone.Player("https://raw.githubusercontent.com/luckyclutcher/cryptosonos-frontend/18443d138626512b1a06aeb1d043ee4510e529da/public/samples/dub05.mp3").connect(vol05);
-var dub06 = new Tone.Player("https://raw.githubusercontent.com/luckyclutcher/cryptosonos-frontend/18443d138626512b1a06aeb1d043ee4510e529da/public/samples/dub06.mp3").connect(vol06);
-var dub07 = new Tone.Player("https://raw.githubusercontent.com/luckyclutcher/cryptosonos-frontend/18443d138626512b1a06aeb1d043ee4510e529da/public/samples/dub07.mp3").connect(vol07);
-var dub08 = new Tone.Player("https://raw.githubusercontent.com/luckyclutcher/cryptosonos-frontend/18443d138626512b1a06aeb1d043ee4510e529da/public/samples/dub08.mp3").connect(vol08);
+var dub02 = new Tone.Player("https://raw.githubusercontent.com/luckyclutcher/cryptosonos-frontend/18443d138626512b1a06aeb1d043ee4510e529da/public/samples/dub04.mp3").connect(vol02);
+var dub03 = new Tone.Player("https://raw.githubusercontent.com/luckyclutcher/cryptosonos-frontend/18443d138626512b1a06aeb1d043ee4510e529da/public/samples/dub06.mp3").connect(vol03);
+var dub04 = new Tone.Player("https://raw.githubusercontent.com/luckyclutcher/cryptosonos-frontend/18443d138626512b1a06aeb1d043ee4510e529da/public/samples/dub08.mp3").connect(vol04);
+var dub05 = new Tone.Player("https://raw.githubusercontent.com/luckyclutcher/cryptosonos-frontend/18443d138626512b1a06aeb1d043ee4510e529da/public/samples/dub02.mp3").connect(vol05);
+var dub06 = new Tone.Player("https://raw.githubusercontent.com/luckyclutcher/cryptosonos-frontend/18443d138626512b1a06aeb1d043ee4510e529da/public/samples/dub05.mp3").connect(vol06);
+var dub07 = new Tone.Player("https://raw.githubusercontent.com/luckyclutcher/cryptosonos-frontend/18443d138626512b1a06aeb1d043ee4510e529da/public/samples/dub03.mp3").connect(vol07);
+var dub08 = new Tone.Player("https://raw.githubusercontent.com/luckyclutcher/cryptosonos-frontend/18443d138626512b1a06aeb1d043ee4510e529da/public/samples/dub07.mp3").connect(vol08);
 var playersdub = [dub01, dub02, dub03, dub04, dub05, dub06, dub07, dub08];
 
 var jungle01 = new Tone.Player("https://raw.githubusercontent.com/luckyclutcher/cryptosonos-frontend/18443d138626512b1a06aeb1d043ee4510e529da/public/samples/jungle01.mp3").connect(vol01);
@@ -54,7 +54,7 @@ var playersjungle = [jungle01, jungle02, jungle03, jungle04, jungle05, jungle06,
 var players = playerstekno;
 
 var namestekno = ["kick 1", "jump", "hat", "crash", "kick 2", "pump 1", "pump 2", "rim"];
-var namesdub = ["kick 1", "snare", "hat", "rim", "woodblock", "guitar", "synare", "crash"];
+var namesdub = ["kick", "rim", "guitar", "crash", "snare", "woodblock", "hat", "synare"];
 var namesjungle = ["kick 1", "kick 2", "snare 1", "snare 2", "snare 3", "hat 1", "hat 2", "hat 3"];
 
 const moodArray = ["tekno", "dub", "jungle"];
@@ -260,11 +260,31 @@ const rateSequence = () => {
     if(rate > 0 && props.sequence[7][4] + props.sequence[7][12] == 2) {
       rate += 1;
     }
-  }
+  } // if tekno
+  if(props.mood == "dub") {
+    if(props.bpm <= 160 && props.bpm >= 90 && props.sequence[0][0] == 1) {
+      rate = 1;
+    }
+    if(rate == 1 && props.sequence[4][8]  == 1) {
+      rate = 2;
+    }
+    if(rate > 0 && sumArray(props.sequence[6]) > 3) {
+      rate += 1;
+    }
+  } // if dub
   props.setRating(rate);
   return rate;
 
 };
+
+/*     sum Array, used for rating     */
+const sumArray = (array) => {
+  let sum = 0;
+  for(let i = 0; i<array.length; i++) {
+    sum += array[i];
+  }
+  return sum;
+}
 
 // NEW
 /*     Reset sequence     */
