@@ -12,11 +12,11 @@
     border-radius: 2%;
     box-shadow: 1em 1em 2em 0.5em var(--color1), 0 0 0.4em 0.4em var(--color1); 
     display: grid;
-    grid-template-columns: 6fr 1fr;
+    grid-template-columns: 0.8fr 0.2fr;
     grid-template-rows: 0.5fr 0.5fr 6fr;
     grid-template-areas:
     "startstop bpm"
-    "display save"
+    "display rating"
     "switchesandvolume switchesandvolume";
 }
 
@@ -188,4 +188,12 @@ form {
 
 .starOff {
     opacity: 20%;
+}
+
+#rating {
+    grid-area: rating;
+    justify-self: center; /* horizontal align in grid */
+    align-self: center; /* vertical align in grid */
+    margin-right: 30%;
+
 }

@@ -41,14 +41,14 @@ var dub07 = new Tone.Player("https://raw.githubusercontent.com/luckyclutcher/cry
 var dub08 = new Tone.Player("https://raw.githubusercontent.com/luckyclutcher/cryptosonos-frontend/18443d138626512b1a06aeb1d043ee4510e529da/public/samples/dub07.mp3").connect(vol08);
 var playersdub = [dub01, dub02, dub03, dub04, dub05, dub06, dub07, dub08];
 
-var jungle01 = new Tone.Player("https://raw.githubusercontent.com/luckyclutcher/cryptosonos-frontend/18443d138626512b1a06aeb1d043ee4510e529da/public/samples/jungle01.mp3").connect(vol01);
-var jungle02 = new Tone.Player("https://raw.githubusercontent.com/luckyclutcher/cryptosonos-frontend/18443d138626512b1a06aeb1d043ee4510e529da/public/samples/jungle02.mp3").connect(vol02);
-var jungle03 = new Tone.Player("https://raw.githubusercontent.com/luckyclutcher/cryptosonos-frontend/18443d138626512b1a06aeb1d043ee4510e529da/public/samples/jungle03.mp3").connect(vol03);
-var jungle04 = new Tone.Player("https://raw.githubusercontent.com/luckyclutcher/cryptosonos-frontend/18443d138626512b1a06aeb1d043ee4510e529da/public/samples/jungle04.mp3").connect(vol04);
-var jungle05 = new Tone.Player("https://raw.githubusercontent.com/luckyclutcher/cryptosonos-frontend/18443d138626512b1a06aeb1d043ee4510e529da/public/samples/jungle05.mp3").connect(vol05);
-var jungle06 = new Tone.Player("https://raw.githubusercontent.com/luckyclutcher/cryptosonos-frontend/18443d138626512b1a06aeb1d043ee4510e529da/public/samples/jungle06.mp3").connect(vol06);
-var jungle07 = new Tone.Player("https://raw.githubusercontent.com/luckyclutcher/cryptosonos-frontend/18443d138626512b1a06aeb1d043ee4510e529da/public/samples/jungle07.mp3").connect(vol07);
-var jungle08 = new Tone.Player("https://raw.githubusercontent.com/luckyclutcher/cryptosonos-frontend/18443d138626512b1a06aeb1d043ee4510e529da/public/samples/jungle08.mp3").connect(vol08);
+var jungle01 = new Tone.Player("https://raw.githubusercontent.com/luckyclutcher/cryptosonos-frontend/bf08184626454ac0020c7c126d88ae7443e1cd9b/public/samples/jungle01.mp3").connect(vol01);
+var jungle02 = new Tone.Player("https://raw.githubusercontent.com/luckyclutcher/cryptosonos-frontend/bf08184626454ac0020c7c126d88ae7443e1cd9b/public/samples/jungle02.mp3").connect(vol02);
+var jungle03 = new Tone.Player("https://raw.githubusercontent.com/luckyclutcher/cryptosonos-frontend/bf08184626454ac0020c7c126d88ae7443e1cd9b/public/samples/jungle03.mp3").connect(vol03);
+var jungle04 = new Tone.Player("https://raw.githubusercontent.com/luckyclutcher/cryptosonos-frontend/bf08184626454ac0020c7c126d88ae7443e1cd9b/public/samples/jungle04.mp3").connect(vol04);
+var jungle05 = new Tone.Player("https://raw.githubusercontent.com/luckyclutcher/cryptosonos-frontend/bf08184626454ac0020c7c126d88ae7443e1cd9b/public/samples/jungle05.mp3").connect(vol05);
+var jungle06 = new Tone.Player("https://raw.githubusercontent.com/luckyclutcher/cryptosonos-frontend/bf08184626454ac0020c7c126d88ae7443e1cd9b/public/samples/jungle06.mp3").connect(vol06);
+var jungle07 = new Tone.Player("https://raw.githubusercontent.com/luckyclutcher/cryptosonos-frontend/bf08184626454ac0020c7c126d88ae7443e1cd9b/public/samples/jungle07.mp3").connect(vol07);
+var jungle08 = new Tone.Player("https://raw.githubusercontent.com/luckyclutcher/cryptosonos-frontend/bf08184626454ac0020c7c126d88ae7443e1cd9b/public/samples/jungle08.mp3").connect(vol08);
 var playersjungle = [jungle01, jungle02, jungle03, jungle04, jungle05, jungle06, jungle07, jungle08];
 
 var players = playerstekno;
@@ -338,6 +338,7 @@ const configLoop = () => {
         <div id="bpmdisplay">BPM : {Math.floor(Tone.Transport.bpm.value)}</div>
         <input type="range" id="points" min="60" max="320" value={props.bpm} className="slider" onInput={handleBpmChange} onChange={handleBpmChange}></input>
       </form>
+
       {/* 
       <button id="resetbutton" onClick={resetSequence}>Reset Sequence</button>
       */}
