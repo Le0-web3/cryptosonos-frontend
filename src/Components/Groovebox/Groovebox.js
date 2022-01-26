@@ -5,6 +5,8 @@ import { FaPlay } from "react-icons/fa";
 import { FaStop } from "react-icons/fa";
 import { FaCaretUp } from "react-icons/fa";
 import { FaCaretDown } from "react-icons/fa";
+import { FaStar } from "react-icons/fa";
+
 import * as Tone from 'tone';
 
 // ----- GLOBAL AND CONSTANT -----
@@ -20,12 +22,12 @@ const vol08 = new Tone.Volume().toDestination();
 const volumeNode = [vol01, vol02, vol03, vol04, vol05, vol06, vol07, vol08];
 
 var tekno01 = new Tone.Player("https://raw.githubusercontent.com/luckyclutcher/cryptosonos-frontend/18443d138626512b1a06aeb1d043ee4510e529da/public/samples/tekno01.mp3").connect(vol01);
-var tekno02 = new Tone.Player("https://raw.githubusercontent.com/luckyclutcher/cryptosonos-frontend/18443d138626512b1a06aeb1d043ee4510e529da/public/samples/tekno02.mp3").connect(vol02);
-var tekno03 = new Tone.Player("https://raw.githubusercontent.com/luckyclutcher/cryptosonos-frontend/18443d138626512b1a06aeb1d043ee4510e529da/public/samples/tekno03.mp3").connect(vol03);
-var tekno04 = new Tone.Player("https://raw.githubusercontent.com/luckyclutcher/cryptosonos-frontend/18443d138626512b1a06aeb1d043ee4510e529da/public/samples/tekno04.mp3").connect(vol04);
-var tekno05 = new Tone.Player("https://raw.githubusercontent.com/luckyclutcher/cryptosonos-frontend/18443d138626512b1a06aeb1d043ee4510e529da/public/samples/tekno05.mp3").connect(vol05);
-var tekno06 = new Tone.Player("https://raw.githubusercontent.com/luckyclutcher/cryptosonos-frontend/18443d138626512b1a06aeb1d043ee4510e529da/public/samples/tekno06.mp3").connect(vol06);
-var tekno07 = new Tone.Player("https://raw.githubusercontent.com/luckyclutcher/cryptosonos-frontend/18443d138626512b1a06aeb1d043ee4510e529da/public/samples/tekno07.mp3").connect(vol07);
+var tekno02 = new Tone.Player("https://raw.githubusercontent.com/luckyclutcher/cryptosonos-frontend/18443d138626512b1a06aeb1d043ee4510e529da/public/samples/tekno03.mp3").connect(vol02);
+var tekno03 = new Tone.Player("https://raw.githubusercontent.com/luckyclutcher/cryptosonos-frontend/18443d138626512b1a06aeb1d043ee4510e529da/public/samples/tekno06.mp3").connect(vol03);
+var tekno04 = new Tone.Player("https://raw.githubusercontent.com/luckyclutcher/cryptosonos-frontend/18443d138626512b1a06aeb1d043ee4510e529da/public/samples/tekno07.mp3").connect(vol04);
+var tekno05 = new Tone.Player("https://raw.githubusercontent.com/luckyclutcher/cryptosonos-frontend/18443d138626512b1a06aeb1d043ee4510e529da/public/samples/tekno02.mp3").connect(vol05);
+var tekno06 = new Tone.Player("https://raw.githubusercontent.com/luckyclutcher/cryptosonos-frontend/18443d138626512b1a06aeb1d043ee4510e529da/public/samples/tekno04.mp3").connect(vol06);
+var tekno07 = new Tone.Player("https://raw.githubusercontent.com/luckyclutcher/cryptosonos-frontend/18443d138626512b1a06aeb1d043ee4510e529da/public/samples/tekno05.mp3").connect(vol07);
 var tekno08 = new Tone.Player("https://raw.githubusercontent.com/luckyclutcher/cryptosonos-frontend/18443d138626512b1a06aeb1d043ee4510e529da/public/samples/tekno08.mp3").connect(vol08);
 var playerstekno = [tekno01, tekno02, tekno03, tekno04, tekno05, tekno06, tekno07, tekno08];
 
@@ -51,13 +53,14 @@ var playersjungle = [jungle01, jungle02, jungle03, jungle04, jungle05, jungle06,
 
 var players = playerstekno;
 
-var namestekno = ["kick 1", "kick 2", "jump", "pump 1", "pump 2", "hat", "crash", "rim"];
+var namestekno = ["kick 1", "jump", "hat", "crash", "kick 2", "pump 1", "pump 2", "rim"];
 var namesdub = ["kick 1", "snare", "hat", "rim", "woodblock", "guitar", "synare", "crash"];
 var namesjungle = ["kick 1", "kick 2", "snare 1", "snare 2", "snare 3", "hat 1", "hat 2", "hat 3"];
 
 const moodArray = ["tekno", "dub", "jungle"];
 
 let PlayStopButton;
+let RatingStars;
 
 var beatvar = 0;
 
@@ -140,6 +143,51 @@ useEffect(() => {
     beatvar = 0;
   }, [isOn] )
 
+  /*
+  /*     Rate sequence     
+  useEffect(() => {
+    rateSequence();
+  }, [props.sequence] )
+  */
+
+  /*     Rating     */
+  useEffect(() => {
+    let currentRating = rateSequence();
+    if (currentRating == 0) {
+      RatingStars = 
+      <div>
+        <FaStar className='starOff' />
+        <FaStar className='starOff' />
+        <FaStar className='starOff' /> 
+      </div>
+      }
+    else if(currentRating == 1) {
+      RatingStars = 
+      <div>
+        <FaStar />
+        <FaStar className='starOff' />
+        <FaStar className='starOff' /> 
+      </div>
+      }
+    else if(currentRating == 2) {
+      RatingStars = 
+      <div>
+        <FaStar />
+        <FaStar />
+        <FaStar className='starOff' /> 
+      </div>
+      }
+    else if(currentRating == 3) {
+      RatingStars = 
+      <div>
+        <FaStar />
+        <FaStar />
+        <FaStar /> 
+      </div>
+      }
+    
+  }, [props.sequence, props.bpm])
+
 // -----   SET STATE METHODS   -----
 
 /*     StartStop     */
@@ -199,6 +247,25 @@ const handleVolumeChange = e => {
   volumeNode[name].volume.value = value;
 };
 
+/*     Rate sequence     */
+const rateSequence = () => {
+  let rate = 0;
+  if(props.mood == "tekno") {
+    if(props.bpm <= 220 && props.bpm >= 100 && props.sequence[0][0] + props.sequence[0][4] + props.sequence[0][8] + props.sequence[0][12]  == 4 || props.sequence[4][0] + props.sequence[4][4] + props.sequence[4][8] + props.sequence[4][12]  == 4) {
+      rate = 1;
+    }
+    if(rate == 1 && props.sequence[5][0] + props.sequence[5][4] + props.sequence[5][8] + props.sequence[5][12]  == 4 || props.sequence[6][0] + props.sequence[6][4] + props.sequence[6][8] + props.sequence[6][12]  == 4) {
+      rate = 2;
+    }
+    if(rate > 0 && props.sequence[7][4] + props.sequence[7][12] == 2) {
+      rate += 1;
+    }
+  }
+  props.setRating(rate);
+  return rate;
+
+};
+
 // NEW
 /*     Reset sequence     */
 // !!!!! fix needed, doesnt reset the sound
@@ -240,6 +307,9 @@ const configLoop = () => {
 
   return (
     <div id="groove-box">
+      <div id="rating">
+       {RatingStars}
+      </div>
       <div id="startstop">
         {PlayStopButton}
       </div>

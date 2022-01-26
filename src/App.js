@@ -43,6 +43,7 @@ const App = () => {
         jungle: 0  
     }
   });
+  const [sequenceRating, setSequenceRating] = useState(0);
 
 
 
@@ -52,6 +53,14 @@ const App = () => {
     setView(event.target.id.slice(0, -4));
   }
 
+  /*
+  const rateMySequence = () => {
+    let rating = 0;
+    if(mood == "tekno") {
+
+    }
+  }
+  */
 
   // RENDER
   const renderContent = () => {
@@ -74,6 +83,8 @@ const App = () => {
       setBpm={setBpm}
       sequence={sequence}
       setSequence={setSequence}
+      rating={sequenceRating}
+      setRating={setSequenceRating}
       />;
     }
     else if(view == "soundsystem") {

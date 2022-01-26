@@ -185,3 +185,7 @@ form {
     border-radius: 3%;
     box-shadow: 0.6em 0.6em 2em 0.5em var(--color1), 0 0 0.4em 0.4em var(--color1); 
 }   
+
+.starOff {
+    opacity: 20%;
+}
