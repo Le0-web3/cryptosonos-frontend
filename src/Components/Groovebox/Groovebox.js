@@ -55,7 +55,7 @@ var players = playerstekno;
 
 var namestekno = ["kick 1", "jump", "hat", "crash", "kick 2", "pump 1", "pump 2", "rim"];
 var namesdub = ["kick", "rim", "guitar", "crash", "snare", "woodblock", "hat", "synare"];
-var namesjungle = ["kick 1", "kick 2", "snare 1", "snare 2", "snare 3", "hat 1", "hat 2", "hat 3"];
+var namesjungle = ["kick", "rim 1", "snare 1", "roll 1", "roll 2", "hat", "snare 2", "rim 2"];
 
 const moodArray = ["tekno", "dub", "jungle"];
 
@@ -272,6 +272,17 @@ const rateSequence = () => {
       rate += 1;
     }
   } // if dub
+  if(props.mood == "jungle") {
+    if(props.bpm <= 200 && props.bpm >= 160 && props.sequence[0][0] + props.sequence[0][10] == 2 && props.sequence[2][4] + props.sequence[2][12] + props.sequence[6][4] + props.sequence[6][12] > 1) {
+      rate = 1;
+    }
+    if(rate == 1 && sumArray(props.sequence[4]) + sumArray(props.sequence[5]) > 1) {
+      rate = 2;
+    }
+    if(sumArray(props.sequence[0]) + sumArray(props.sequence[1]) + sumArray(props.sequence[2]) + sumArray(props.sequence[3]) + sumArray(props.sequence[4]) + sumArray(props.sequence[5]) + sumArray(props.sequence[6]) + sumArray(props.sequence[7]) == 8 && props.sequence[0][0] + props.sequence[1][2] + props.sequence[2][4] + props.sequence[3][6] + props.sequence[4][8] + props.sequence[5][10] + props.sequence[6][12] + props.sequence[7][14] == 8) {
+      rate = 3;
+    }
+  } // if jungle
   props.setRating(rate);
   return rate;
 
