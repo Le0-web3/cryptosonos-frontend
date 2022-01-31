@@ -222,13 +222,14 @@ const handleVolumeChange = e => {
 
 // NEW
 /*     Reset sequence     */
-// !!!!! fix needed, doesnt reset the sound
+// !!!!! fix needed, doesnt work if already stopped
 
 const resetSequence = () => {
-    setStarted(false);
-    setIsOn(false);
-    Tone.Transport.stop();
-    Tone.Transport.cancel();
+    
+      Tone.Transport.stop();
+      setIsOn(false);
+      Tone.Transport.cancel();
+    
   let emptyArr = [
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -240,6 +241,7 @@ const resetSequence = () => {
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
   ];
   props.setSequence(emptyArr);
+  setStarted(false);
 
 };
 
@@ -288,7 +290,7 @@ const configLoop = () => {
       
       <div id="displaywrapper">
         <div id="display">
-          {props.mood} - {display} - {isOn?"yes":"no"}
+          {props.mood} - {display} - {started?"started":"not started"}
         </div>
         <div id="bankbutton">
           <FaCaretUp className="icon" onClick={handleIncrementMood} />
