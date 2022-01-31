@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './Home.css';
 import MiniGroovebox from './../Groovebox/MiniGroovebox.js';
 import BuildedSono from './../Soundsystem/BuildedSono.js';
+import SequenceRating from './../SequenceRating/SequenceRating.js';
 
 const Home = (props) => {
 
@@ -17,6 +18,13 @@ const Home = (props) => {
                     mood={props.mood}
                     sequence={props.sequence}
                     />
+                <SequenceRating 
+                    sequence={props.sequence} 
+                    bpm={props.bpm} 
+                    mood={props.mood} 
+                    rating={props.rating} 
+                    setRating={props.setSequenceRating}
+                 />
                 <div className="card" id="grooveboxcard" onClick={(e) => {props.handleClickView(e);}}>Groovebox</div>
             </div>
             <div className="buttoncolumn" id="soundsystemarea">     

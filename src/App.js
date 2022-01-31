@@ -45,7 +45,7 @@ const App = () => {
   });
   const [sequenceRating, setSequenceRating] = useState(0);
 
-
+  //   -----   USE EFFFECT   -----
 
   // STATE FUNCTIONS
     // navigation
@@ -53,18 +53,9 @@ const App = () => {
     setView(event.target.id.slice(0, -4));
   }
 
-  /*
-  const rateMySequence = () => {
-    let rating = 0;
-    if(mood == "tekno") {
-
-    }
-  }
-  */
-
   // RENDER
   const renderContent = () => {
-    if (view == "home") {
+    if (view === "home") {
       return <Home handleClickView={handleClickView}
       mood={mood}
       setMood={setMood}
@@ -73,9 +64,12 @@ const App = () => {
       sequence={sequence}
       setSequence={setSequence}
       builded={builded}
-      setBuilded={setBuilded} />;
+      setBuilded={setBuilded}
+      sequenceRating={sequenceRating}
+      setSequenceRating={setSequenceRating}
+      />;
     }
-    else if(view == "groovebox") {
+    else if(view === "groovebox") {
       return <Groovebox 
       mood={mood}
       setMood={setMood}
@@ -85,9 +79,10 @@ const App = () => {
       setSequence={setSequence}
       rating={sequenceRating}
       setRating={setSequenceRating}
+      view={view}
       />;
     }
-    else if(view == "soundsystem") {
+    else if(view === "soundsystem") {
       return <Soundsystem
       builded={builded}
       setBuilded={setBuilded}

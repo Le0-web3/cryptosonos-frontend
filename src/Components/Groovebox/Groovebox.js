@@ -5,12 +5,12 @@ import { FaPlay } from "react-icons/fa";
 import { FaStop } from "react-icons/fa";
 import { FaCaretUp } from "react-icons/fa";
 import { FaCaretDown } from "react-icons/fa";
-// import { FaStar } from "react-icons/fa";
 import SequenceRating from './../SequenceRating/SequenceRating.js';
 
 import * as Tone from 'tone';
 
 // ----- GLOBAL AND CONSTANT -----
+
 
 const vol01 = new Tone.Volume().toDestination();
 const vol02 = new Tone.Volume().toDestination();
@@ -54,6 +54,7 @@ var playersjungle = [jungle01, jungle02, jungle03, jungle04, jungle05, jungle06,
 
 var players = playerstekno;
 
+
 var namestekno = ["kick 1", "jump", "hat", "crash", "kick 2", "pump 1", "pump 2", "rim"];
 var namesdub = ["kick", "rim", "guitar", "crash", "snare", "woodblock", "hat", "synare"];
 var namesjungle = ["kick", "rim 1", "snare 1", "roll 1", "roll 2", "hat", "snare 2", "rim 2"];
@@ -83,11 +84,6 @@ useEffect(() => {
     } else if(props.mood == "jungle") {
       players = playersjungle;
     }
-/*    props.setVolume({1: 1, 2: 1, 3: 1, 4: 1, 5: 1, 6: 1, 7: 1, 8: 1});
-    for(let i = 0; i<players.length; i++) {
-      players[i].volume.value = 1;
-    } 
-    */
   }, [props.mood] )
 
 /*     names     */
@@ -138,12 +134,28 @@ useEffect(() => {
   }, [props.mood] )
 
   /*     setBeat     */
+  
   useEffect(() => {
     setBeat(0);
     beatvar = 0;
   }, [isOn] )
-
   
+    
+    // on unmount
+    // cleanup
+    useEffect(() => {
+        return () => {
+          Tone.Transport.stop();
+         Tone.Transport.cancel();
+         setStarted(false);
+        };
+    }, [] )
+
+// on mount
+/*
+    useEffect(() => {
+    }, []);
+  */
 
 // -----   SET STATE METHODS   -----
 
@@ -153,14 +165,16 @@ const startStop = () => {
        Tone.Transport.stop();
        setIsOn(false);
      } else { // if was off
+      Tone.start();
        if(!started) {
-         Tone.start();
          configLoop();
          setStarted(true);
-       }
+     }
+     
        setIsOn(true);
        Tone.Transport.start();
      }
+    
    };
 
 /*     BPM     */
@@ -209,8 +223,12 @@ const handleVolumeChange = e => {
 // NEW
 /*     Reset sequence     */
 // !!!!! fix needed, doesnt reset the sound
-/*
+
 const resetSequence = () => {
+    setStarted(false);
+    setIsOn(false);
+    Tone.Transport.stop();
+    Tone.Transport.cancel();
   let emptyArr = [
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -222,32 +240,40 @@ const resetSequence = () => {
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
   ];
   props.setSequence(emptyArr);
+
 };
-*/
+
   
 // -----   THE LOOP   -----
 /* trick here : beatvar and beat are the same but we need to use beatvat(global var) for the audio
 can t work in a foreach loop with a state
 beat is a state and is used for re rendering
 */
+
+// -----   Callback for the loop   -----
+const repeat = (time) => {    
+  props.sequence.forEach((row) => {
+    let pad = row[beatvar];
+    if (pad === 1) {
+      players[props.sequence.indexOf(row)].start(time);
+    }
+  });
+  beatvar = (beatvar + 1) % 16;
+  setBeat(beatvar);
+};
+
+//   ----- ConfigLoop   -----
 const configLoop = () => {
-    const repeat = (time) => {    
-      props.sequence.forEach((row) => {
-        let pad = row[beatvar];
-        if (pad === 1) {
-          players[props.sequence.indexOf(row)].start(time);
-        }
-      });
-      beatvar = (beatvar + 1) % 16;
-      setBeat(beatvar);
-    }; // repeat
     Tone.Transport.bpm.value = 120;
     Tone.Transport.scheduleRepeat(repeat, "16n");
   };
+  
 
   return (
     <div id="groove-box">
+      <div id="rating">
       <SequenceRating sequence={props.sequence} bpm={props.bpm} mood={props.mood} rating={props.rating} setRating={props.setRating} />
+      </div>
       <div id="startstop">
         {PlayStopButton}
       </div>
@@ -257,12 +283,12 @@ const configLoop = () => {
         <input type="range" id="points" min="60" max="320" value={props.bpm} className="slider" onInput={handleBpmChange} onChange={handleBpmChange}></input>
       </form>
 
-      {/* 
+      
       <button id="resetbutton" onClick={resetSequence}>Reset Sequence</button>
-      */}
+      
       <div id="displaywrapper">
         <div id="display">
-          {props.mood} - {display}
+          {props.mood} - {display} - {isOn?"yes":"no"}
         </div>
         <div id="bankbutton">
           <FaCaretUp className="icon" onClick={handleIncrementMood} />

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { FaStar } from "react-icons/fa";
-import './../Groovebox/Groovebox.css';
 
 let RatingStars;
 
@@ -95,7 +94,7 @@ const rateSequence = () => {
   }
 
   return (
-    <div id="rating">
+    <div>
     {RatingStars}
    </div>
   );
