@@ -159,23 +159,6 @@ useEffect(() => {
 
 // -----   SET STATE METHODS   -----
 
-/*     StartStop     */
-const startStop = () => {
-     if(isOn) {
-       Tone.Transport.stop();
-       setIsOn(false);
-     } else { // if was off
-      Tone.start();
-       if(!started) {
-         configLoop();
-         setStarted(true);
-     }
-     
-       setIsOn(true);
-       Tone.Transport.start();
-     }
-    
-   };
 
 /*     BPM     */
 const handleBpmChange = (event) => {
@@ -218,31 +201,38 @@ const handleVolumeChange = e => {
   volumeNode[name].volume.value = value;
 };
 
+/*     StartStop     */
+const startStop = () => {
+  if(isOn) {
+    Tone.Transport.stop();
+    setIsOn(false);
+  } else { // if was off
+   Tone.start();
+    if(!started) {
+      configLoop();
+      setStarted(true);
+  }
+  
+    setIsOn(true);
+    Tone.Transport.start();
+  }
+ console.log(Tone.Transport.state)
+};
 
 
 // NEW
 /*     Reset sequence     */
-// !!!!! fix needed, doesnt work if already stopped
 
 const resetSequence = () => {
-    
-      Tone.Transport.stop();
-      setIsOn(false);
-      Tone.Transport.cancel();
-    
-  let emptyArr = [
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-  ];
-  props.setSequence(emptyArr);
-  setStarted(false);
-
+      let newArr = [...props.sequence];
+        for(let i=0; i<8; i++) {
+          for(let j=0; j<16; j++) {
+            if(newArr[i][j] == 1) {
+              newArr[i][j] = 0;
+            } // if
+          } //for j
+        } // for i
+      props.setSequence(newArr);
 };
 
   
