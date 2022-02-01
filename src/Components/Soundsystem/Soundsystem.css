@@ -1,6 +1,13 @@
 #soundsystem-content {
-    display: flex;
+  /*  display: flex;
     justify-content: space-around;
+    */
+    display: grid;
+    grid-template-columns: 0.7fr 0.3fr;
+    grid-template-rows: 0.7fr 0.2fr;
+    grid-template-areas:
+    "buildedsono inventory"
+    "unbuild .";
 }
 
 #build {
@@ -20,6 +27,7 @@
     align-items: flex-start;
     font-size: 1.4em;
     margin-right:5%;
+    grid-area: inventory;
 }
 
 .category {
@@ -179,30 +187,32 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    grid-area: buildedsono;
 }
 
-#resetbutton {
+#unbuildbutton {
     font-family: 'Exo', sans-serif;
     width: 10em;
     height: 3em;
     border: 1px solid var(--color1);
     justify-self: center; /* horizontal align in grid */
     align-self: center; /* vertical align in grid */
-    margin-top: 1%;
+    margin-top: 4%;
     border-radius: 10%;
     color: var(--color3);
     background-color: var(--color2);
     box-shadow: 0.6em 0.6em 2em 0.5em var(--color1), 0 0 0.4em 0.4em var(--color1); 
     transition: color .3s, background-color .2s, box-shadow .25s; /* Animation */
+    grid-area: unbuild;
 }
 
-#resetbutton:hover {
+#unbuildbutton:hover {
     color: var(--color4);
     background-color: var(--color1);
     box-shadow: 0 0 0.4em 0.4em var(--color4); 
 }
 
-#resetbutton:active {
+#unbuildbutton:active {
     color: var(--color3);
     background-color: var(--color1);
     box-shadow: 0 0 0.4em 0.4em var(--color4); 

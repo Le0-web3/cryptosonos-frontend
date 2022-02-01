@@ -148,7 +148,7 @@ const unBuild = () => {
         <div id="build">
             <div><BuildedSono builded={props.builded} /></div>
         </div>
-        <button id="resetbutton" onClick={unBuild}>Unbuild</button>
+        <button id="unbuildbutton" onClick={unBuild}>Unbuild</button>
         <div id="inventory">
             <div className="category">Tekno</div>
                 <div className="inventoryLine">
@@ -203,6 +203,7 @@ const unBuild = () => {
                 </div>
         </div>
     </div>
+    
     
 </div>
 
