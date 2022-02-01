@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/cryptosonos-frontend/static/css/main.16144d8a.chunk.css",
-    "main.js": "/cryptosonos-frontend/static/js/main.7be3af8e.chunk.js",
-    "main.js.map": "/cryptosonos-frontend/static/js/main.7be3af8e.chunk.js.map",
-    "runtime-main.js": "/cryptosonos-frontend/static/js/runtime-main.f96067fb.js",
-    "runtime-main.js.map": "/cryptosonos-frontend/static/js/runtime-main.f96067fb.js.map",
-    "static/js/2.d7cfaea2.chunk.js": "/cryptosonos-frontend/static/js/2.d7cfaea2.chunk.js",
-    "static/js/2.d7cfaea2.chunk.js.map": "/cryptosonos-frontend/static/js/2.d7cfaea2.chunk.js.map",
-    "static/js/3.54f750e6.chunk.js": "/cryptosonos-frontend/static/js/3.54f750e6.chunk.js",
-    "static/js/3.54f750e6.chunk.js.map": "/cryptosonos-frontend/static/js/3.54f750e6.chunk.js.map",
+    "main.css": "/cryptosonos-frontend/static/css/main.a501c013.chunk.css",
+    "main.js": "/cryptosonos-frontend/static/js/main.af96eb5e.chunk.js",
+    "main.js.map": "/cryptosonos-frontend/static/js/main.af96eb5e.chunk.js.map",
+    "runtime-main.js": "/cryptosonos-frontend/static/js/runtime-main.0a679640.js",
+    "runtime-main.js.map": "/cryptosonos-frontend/static/js/runtime-main.0a679640.js.map",
+    "static/js/2.2e50d767.chunk.js": "/cryptosonos-frontend/static/js/2.2e50d767.chunk.js",
+    "static/js/2.2e50d767.chunk.js.map": "/cryptosonos-frontend/static/js/2.2e50d767.chunk.js.map",
+    "static/js/3.73215a4b.chunk.js": "/cryptosonos-frontend/static/js/3.73215a4b.chunk.js",
+    "static/js/3.73215a4b.chunk.js.map": "/cryptosonos-frontend/static/js/3.73215a4b.chunk.js.map",
     "index.html": "/cryptosonos-frontend/index.html",
-    "static/css/main.16144d8a.chunk.css.map": "/cryptosonos-frontend/static/css/main.16144d8a.chunk.css.map",
-    "static/js/2.d7cfaea2.chunk.js.LICENSE.txt": "/cryptosonos-frontend/static/js/2.d7cfaea2.chunk.js.LICENSE.txt"
+    "static/css/main.a501c013.chunk.css.map": "/cryptosonos-frontend/static/css/main.a501c013.chunk.css.map",
+    "static/js/2.2e50d767.chunk.js.LICENSE.txt": "/cryptosonos-frontend/static/js/2.2e50d767.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.f96067fb.js",
-    "static/js/2.d7cfaea2.chunk.js",
-    "static/css/main.16144d8a.chunk.css",
-    "static/js/main.7be3af8e.chunk.js"
+    "static/js/runtime-main.0a679640.js",
+    "static/js/2.2e50d767.chunk.js",
+    "static/css/main.a501c013.chunk.css",
+    "static/js/main.af96eb5e.chunk.js"
   ]
 }
