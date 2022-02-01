@@ -6,12 +6,13 @@ import SequenceRating from './../SequenceRating/SequenceRating.js';
 
 const Home = (props) => {
 
-
-
     return (
-    <div>
+    <div id="homecontent">
+      <div id="welcome">
         <h1>Welcome to <div id="title">Crypto Sonos</div></h1>
-        <div id="cards">
+      </div>
+            <div className="card" id="rulescard" onClick={(e) => {props.handleClickView(e);}}>Rules</div>
+        
             <div className="buttoncolumn" id="grooveboxarea">        
                 <MiniGroovebox    
                     id="grooveboxbuttonimage"    
@@ -39,7 +40,7 @@ const Home = (props) => {
             </div>      
             <div className="card" id="hostarea">Host a Party !</div>
 
-        </div>
+        
 
     </div>
 

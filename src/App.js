@@ -4,6 +4,7 @@ import Home from './Components/Home/Home.js';
 import Groovebox from './Components/Groovebox/Groovebox.js';
 import Soundsystem from './Components/Soundsystem/Soundsystem.js';
 import Navbar from './Components/Navbar/Navbar.js';
+import Rules from './Components/Rules/Rules.js';
 
 const App = () => {
 
@@ -87,6 +88,9 @@ const App = () => {
       builded={builded}
       setBuilded={setBuilded}
        />;
+    }
+    else if(view === "rules") {
+      return <Rules />;
     }
   } // rendercontent
 

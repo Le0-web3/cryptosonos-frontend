@@ -1,0 +1,22 @@
+#rulescontent {
+    margin: auto;
+    text-align: justify;
+    padding: 0 10% 2% 10%;
+    width: 50vw;
+    color: var(--color4);
+    background: linear-gradient(135deg, var(--color1), var(--color2));
+    border: 10px inset var(--color5);
+    border-radius:15px;
+    box-shadow: 0 0 20px 10px var(--color3), 3px 4px 7px inset var(--color4);
+    /* in order: x offset, y offset, blur size, spread size, color */
+    /* blur size and spread size are optional (they default to 0) */
+    text-shadow: 4px 4px 4px var(--color5);
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Bungee', cursive;
+    font-size: 3.4em;
+    text-shadow: 2px 0 0 var(--color1), -2px 0 0 var(--color2), 0 2px 0 var(--color1), 0 -2px 0 var(--color1), 1px 1px var(--color5), -1px -1px 0 var(--color1), 1px -1px 0 var(--color2), -1px 1px 0 var(--color1);
+  }
+
