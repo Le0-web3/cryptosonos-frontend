@@ -6,6 +6,18 @@ import SequenceRating from './../SequenceRating/SequenceRating.js';
 
 const Home = (props) => {
 
+const [partyText, setPartyText] = useState("Host a Party !");
+
+useEffect(() => {
+    if(props.partyState == "partying") {
+        setPartyText("Partying...");
+    } else  { 
+        setPartyText("Host a Party !");
+    } 
+    }, [props.partyState] )
+
+
+
     return (
     <div id="homecontent">
       <div id="welcome">
@@ -38,7 +50,7 @@ const Home = (props) => {
                 </div>  
                 <div className="card" id="soundsystemcard" onClick={(e) => {props.handleClickView(e);}}>Sound System</div>
             </div>      
-            <div className="card" id="hostarea">Host a Party !</div>
+            <div className={`card${props.partyState}`} id="hostarea" onClick={props.hostAPartyAction()}>{partyText}</div>
 
         
 

@@ -19,7 +19,7 @@ useEffect(() => {
     else if(currentRating == 1) {
       RatingStars = 
       <div>
-        <FaStar />
+        <FaStar className='starOn' />
         <FaStar className='starOff' />
         <FaStar className='starOff' /> 
       </div>
@@ -27,8 +27,8 @@ useEffect(() => {
     else if(currentRating == 2) {
       RatingStars = 
       <div>
-        <FaStar />
-        <FaStar />
+        <FaStar className='starOn' />
+        <FaStar className='starOn' />
         <FaStar className='starOff' /> 
       </div>
       }

@@ -41,10 +41,13 @@
 }
 
 .inventoryLine {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr;
+    grid-template-rows: 1fr;
     align-items: center;
     width: 100%;
     font-weight: bold;
+    padding: 1% 0 1% 0;
 }
 
 .boxbutton {
@@ -56,7 +59,7 @@
 }
 
 #topteknobutton {
-    background-image: url(../../pictures/toptekno.png);
+    background-image: url(https://cloudflare-ipfs.com/ipfs/QmaCyhjGKVv7ctGTqxD9zDEWvuHM12tWYqPAo2kD8HLeDt);
     height: 30px;
     width: 145px;
     background-size: 100%;
@@ -64,7 +67,7 @@
 }
 
 #midteknobutton {
-    background-image: url(../../pictures/midtekno.png);
+    background-image: url(https://cloudflare-ipfs.com/ipfs/QmUNgESyVv65FCnRFAFQidd6vcf9szgJ6Zux7fygsFT9mv);
     height: 90px;
     width: 80px;
     background-size: 100%;
@@ -72,7 +75,7 @@
 }
 
 #kickteknobutton {
-    background-image: url(../../pictures/kicktekno.png);
+    background-image: url(https://cloudflare-ipfs.com/ipfs/QmbRmEBegpTQHbtthHK8UioPkwp9og3fKPuPmjKoF3bh8Q);
     height: 70px;
     width: 80px;
     background-size: 100%;
@@ -80,7 +83,7 @@
 }
 
 #subteknobutton {
-    background-image: url(../../pictures/subtekno.png);
+    background-image: url(https://cloudflare-ipfs.com/ipfs/QmNvRYe3aWUXPFmsAVrARB8iK4TtcDXn6oaFwybAZcpauL);
     height: 165px;
     width: 90px;
     background-size: 100%;
@@ -88,7 +91,7 @@
 }
 
 #topdubbutton {
-    background-image: url(../../pictures/topdub.png);
+    background-image: url(https://cloudflare-ipfs.com/ipfs/QmXAMdL2TpUj8KYwQ6YcASDeVjKnnsf3rFt9kaV6ELAess);
     height: 30px;
     width: 145px;
     background-size: 100%;
@@ -96,7 +99,7 @@
 }
 
 #middubbutton {
-    background-image: url(../../pictures/middub.png);
+    background-image: url(https://cloudflare-ipfs.com/ipfs/QmTeCKCpKnEuWgzLmhy5YTvMB1wurvXA8FtZugGwo1gvk8);
     height: 90px;
     width: 80px;
     background-size: 100%;
@@ -104,7 +107,7 @@
 }
 
 #kickdubbutton {
-    background-image: url(../../pictures/kickdub.png);
+    background-image: url(https://cloudflare-ipfs.com/ipfs/QmbSyj8sHkHjvuf7TMB5H4x5usDxsWNhGATVxCVwPzYz4j);
     height: 70px;
     width: 80px;
     background-size: 100%;
@@ -112,7 +115,7 @@
 }
 
 #subdubbutton {
-    background-image: url(../../pictures/subdub.png);
+    background-image: url(https://cloudflare-ipfs.com/ipfs/QmX195iGxKaK5JQEHmBNs1JGERyfvWFXKx8x5jjWnEhzaR);
     height: 165px;
     width: 90px;
     background-size: 100%;
@@ -120,7 +123,7 @@
 }
 
 #topjunglebutton {
-    background-image: url(../../pictures/topjungle.png);
+    background-image: url(https://cloudflare-ipfs.com/ipfs/QmYfARoTJZSghovyQj6ukVepZkn8YRUhX51Ro9RAqfPkDk);
     height: 30px;
     width: 145px;
     background-size: 100%;
@@ -128,7 +131,7 @@
 }
 
 #midjunglebutton {
-    background-image: url(../../pictures/midjungle.png);
+    background-image: url(https://cloudflare-ipfs.com/ipfs/QmTi2adypcZoBWnSL6yzprCPUnKHQWixe7kXyZsp7BeQu7);
     height: 90px;
     width: 80px;
     background-size: 100%;
@@ -136,7 +139,7 @@
 }
 
 #kickjunglebutton {
-    background-image: url(../../pictures/kickjungle.png);
+    background-image: url(https://cloudflare-ipfs.com/ipfs/QmaxPAto9RbRRRAmN6oPPbDxfnYGvubs5XGDhbdKSjmrWb);
     height: 70px;
     width: 80px;
     background-size: 100%;
@@ -144,7 +147,7 @@
 }
 
 #subjunglebutton {
-    background-image: url(../../pictures/subjungle.png);
+    background-image: url(https://cloudflare-ipfs.com/ipfs/QmaM1ozSSXSdr3v1TBAQdibgMkoSFy3RS6cJokwrN1FXzE);
     height: 165px;
     width: 90px;
     background-size: 100%;
@@ -190,7 +193,7 @@
     grid-area: buildedsono;
 }
 
-#unbuildbutton {
+.button {
     font-family: 'Exo', sans-serif;
     width: 10em;
     height: 3em;
@@ -206,15 +209,43 @@
     grid-area: unbuild;
 }
 
-#unbuildbutton:hover {
+.button:hover {
     color: var(--color4);
     background-color: var(--color1);
     box-shadow: 0 0 0.4em 0.4em var(--color4); 
 }
 
-#unbuildbutton:active {
+.button:active {
     color: var(--color3);
     background-color: var(--color1);
     box-shadow: 0 0 0.4em 0.4em var(--color4); 
 }
 
+.mintbutton {
+    grid-column: 3 / 4;
+    font-family: 'Exo', sans-serif;
+    font-size: 0.5em;
+    width: 4em;
+    height: 2em;
+    border: 1px solid var(--color1);
+    justify-self: end; /* horizontal align in grid */
+    margin-right: 5%;
+    align-self: center; /* vertical align in grid */
+    border-radius: 10%;
+    color: var(--color3);
+    background-color: var(--color2);
+    box-shadow: 0.2em 0.2em 0.2em 0.2em var(--color1), 0 0 0.2em 0.2em var(--color1); 
+    transition: color .3s, background-color .2s, box-shadow .25s; /* Animation */
+}
+
+.mintbutton:hover {
+    color: var(--color4);
+    background-color: var(--color1);
+    box-shadow: 0 0 0.4em 0.4em var(--color4); 
+}
+
+.mintbutton:active {
+    color: var(--color3);
+    background-color: var(--color1);
+    box-shadow: 0 0 0.4em 0.4em var(--color4); 
+}

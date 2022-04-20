@@ -1,17 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import './Soundsystem.css';
-import toptekno from "../../pictures/toptekno.png";
-import topdub from "../../pictures/topdub.png";
-import topjungle from "../../pictures/topjungle.png";
-import midtekno from "../../pictures/midtekno.png";
-import middub from "../../pictures/middub.png";
-import midjungle from "../../pictures/midjungle.png";
-import kicktekno from "../../pictures/kicktekno.png";
-import kickdub from "../../pictures/kickdub.png";
-import kickjungle from "../../pictures/kickjungle.png";
-import subtekno from "../../pictures/subtekno.png";
-import subdub from "../../pictures/subdub.png";
-import subjungle from "../../pictures/subjungle.png";
 
 const BuildedSono = (props) => {
 
@@ -47,19 +35,19 @@ for(let i = 0; i < topjunglenumber; i++) {
     <>
     {myTeknoArr.map((number, index) => (
       <div key={number} id="buildedtopwrapper">
-        <img src={toptekno} alt={number} />
+        <img src={`https://cloudflare-ipfs.com/ipfs/QmaCyhjGKVv7ctGTqxD9zDEWvuHM12tWYqPAo2kD8HLeDt`} alt={number} />
       </div>
     ))}
 
     {myDubArr.map((number, index) => (
       <div key={number} id="buildedtopwrapper">
-        <img src={topdub} alt={number} />
+        <img src={`https://cloudflare-ipfs.com/ipfs/QmXAMdL2TpUj8KYwQ6YcASDeVjKnnsf3rFt9kaV6ELAess`} alt={number} />
       </div>
     ))}
 
     {myJungleArr.map((number, index) => (
       <div key={number} id="buildedtopwrapper">
-        <img src={topjungle} alt={number} />
+        <img src={`https://cloudflare-ipfs.com/ipfs/QmYfARoTJZSghovyQj6ukVepZkn8YRUhX51Ro9RAqfPkDk`} alt={number} />
       </div>
     ))}
     </>
@@ -93,19 +81,19 @@ const renderMid = () => {
       <>
       {myTeknoArr.map((number, index) => (
         <div key={number} id="buildedmidwrapper">
-          <img src={midtekno} alt={number} />
+          <img src={`https://cloudflare-ipfs.com/ipfs/QmUNgESyVv65FCnRFAFQidd6vcf9szgJ6Zux7fygsFT9mv`} alt={number} />
         </div>
       ))}
   
       {myDubArr.map((number, index) => (
         <div key={number} id="buildedmidwrapper">
-          <img src={middub} alt={number} />
+          <img src={`https://cloudflare-ipfs.com/ipfs/QmTeCKCpKnEuWgzLmhy5YTvMB1wurvXA8FtZugGwo1gvk8`} alt={number} />
         </div>
       ))}
   
       {myJungleArr.map((number, index) => (
         <div key={number} id="buildedmidwrapper">
-          <img src={midjungle} alt={number} />
+          <img src={`https://cloudflare-ipfs.com/ipfs/QmTi2adypcZoBWnSL6yzprCPUnKHQWixe7kXyZsp7BeQu7`} alt={number} />
         </div>
       ))}
       </>
@@ -139,19 +127,19 @@ const renderKick = () => {
       <>
       {myTeknoArr.map((number, index) => (
         <div key={number} id="buildedkickwrapper">
-          <img src={kicktekno} alt={number} />
+          <img src={`https://cloudflare-ipfs.com/ipfs/QmbRmEBegpTQHbtthHK8UioPkwp9og3fKPuPmjKoF3bh8Q`} alt={number} />
         </div>
       ))}
   
       {myDubArr.map((number, index) => (
         <div key={number} id="buildedkickwrapper">
-          <img src={kickdub} alt={number} />
+          <img src={`https://cloudflare-ipfs.com/ipfs/QmbSyj8sHkHjvuf7TMB5H4x5usDxsWNhGATVxCVwPzYz4j`} alt={number} />
         </div>
       ))}
   
       {myJungleArr.map((number, index) => (
         <div key={number} id="buildedkickwrapper">
-          <img src={kickjungle} alt={number} />
+          <img src={`https://cloudflare-ipfs.com/ipfs/QmaxPAto9RbRRRAmN6oPPbDxfnYGvubs5XGDhbdKSjmrWb`} alt={number} />
         </div>
       ))}
       </>
@@ -185,19 +173,19 @@ const renderKick = () => {
         <>
         {myTeknoArr.map((number, index) => (
           <div key={number} id="buildedsubwrapper">
-            <img src={subtekno} alt={number} />
+            <img src={`https://cloudflare-ipfs.com/ipfs/QmNvRYe3aWUXPFmsAVrARB8iK4TtcDXn6oaFwybAZcpauL`} alt={number} />
           </div>
         ))}
     
         {myDubArr.map((number, index) => (
           <div key={number} id="buildedsubwrapper">
-            <img src={subdub} alt={number} />
+            <img src={`https://cloudflare-ipfs.com/ipfs/QmX195iGxKaK5JQEHmBNs1JGERyfvWFXKx8x5jjWnEhzaR`} alt={number} />
           </div>
         ))}
     
         {myJungleArr.map((number, index) => (
           <div key={number} id="buildedsubwrapper">
-            <img src={subjungle} alt={number} />
+            <img src={`https://cloudflare-ipfs.com/ipfs/QmaM1ozSSXSdr3v1TBAQdibgMkoSFy3RS6cJokwrN1FXzE`} alt={number} />
           </div>
         ))}
         </>

@@ -117,7 +117,7 @@ useEffect(() => {
       document.documentElement.style.setProperty('--color2', '#323232');
       document.documentElement.style.setProperty('--color3', '#FF1E56');
       document.documentElement.style.setProperty('--color4', '#FFAC41');
-      document.documentElement.style.setProperty('--color5', '#575757');
+      document.documentElement.style.setProperty('--color5', '#000441');
     } else if(props.mood == "dub") {
       document.documentElement.style.setProperty('--color1', '#000000');
       document.documentElement.style.setProperty('--color2', '#123e01');

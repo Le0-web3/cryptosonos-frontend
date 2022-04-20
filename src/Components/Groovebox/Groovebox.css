@@ -3,12 +3,14 @@
 /* top: 50%;
     left: 50%; */
     width: 85%;
-  /*  height: 82%; */
+ /*   height: 200%;  */
     top: 6vh;
     margin-left: auto;
     margin-right: auto;
 /* margin-left: -40vw; */
-    background: repeating-radial-gradient(circle at center, var(--color1) 0, var(--color2) 100%);
+    background:       
+    linear-gradient(217deg, var(--color2) 20%, transparent),
+    repeating-radial-gradient(circle at center, var(--color5) 0, var(--color2) 25%, var(--color5) 75%, var(--color2) 100%);
     border-radius: 2%;
     box-shadow: 1em 1em 2em 0.5em var(--color1), 0 0 0.4em 0.4em var(--color1); 
     display: grid;
@@ -84,7 +86,8 @@
     text-align: center;
     margin: 0.25em;
     border-radius: 10%;
-    color: var(--color1);
+    color: var(--color4);
+    font-weight: lighter;
     box-shadow: 0.6em 0.6em 2em 0.5em var(--color1), 0 0 0.4em 0.4em var(--color1); 
 }
 
@@ -190,6 +193,11 @@ form {
 
 .starOff {
     opacity: 20%;
+    text-shadow: 0 0 30px #000;
+}
+
+.starOn {
+    opacity: 100%;
 }
 
 #rating {
