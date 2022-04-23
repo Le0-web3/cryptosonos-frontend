@@ -192,12 +192,12 @@ form {
 }   
 
 .starOff {
-    opacity: 20%;
+    opacity: 0.2;
     text-shadow: 0 0 30px #000;
 }
 
 .starOn {
-    opacity: 100%;
+    opacity: 1;
 }
 
 #rating {
