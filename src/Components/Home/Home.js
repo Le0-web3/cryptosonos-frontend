@@ -50,7 +50,7 @@ useEffect(() => {
                 </div>  
                 <div className="card" id="soundsystemcard" onClick={(e) => {props.handleClickView(e);}}>Sound System</div>
             </div>      
-            <div className={`card${props.partyState}`} id="hostarea" onClick={props.hostAPartyAction()}>{partyText}</div>
+            <div className={`card${props.partyState}`} id="hostarea" onClick={props.hostAPartyAction(100)}>{partyText}</div>
 
         
 

@@ -21,7 +21,7 @@ const [characterNFT, setCharacterNFT] = useState([]);
 const [characters, setCharacters] = useState([]); // hold the default boxes
 const [gameContract, setGameContract] = useState(null);
 const [partyState, setPartyState] = useState('');
-const [NFTOwned, setNFTOwned] = useState([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
+const [NFTOwned, setNFTOwned] = useState([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]); // used
 
 // UseEffect
 useEffect(() => {
@@ -49,20 +49,17 @@ useEffect(() => {
   const getBoxes = async () => {
     try {
       console.log('Getting contract boxes to mint');
-
       /*
        * Call contract to get all mint-able boxes
        */
       const boxesTxn = await gameContract.getAllDefaultBoxes();
       console.log('boxesTxn:', boxesTxn);
-
       /*
        * Go through all of our boxes and transform the data
        */
       const boxes = boxesTxn.map((boxData) =>
         transformNFTData(boxData)
       );
-
       /*
        * Set all mint-able characters in state
        */
@@ -84,21 +81,30 @@ useEffect(() => {
     alert(`Your NFT is all done -- see it here: https://testnets.opensea.io/assets/${gameContract.toString()}/${tokenId.toNumber()}`);
   }
 
-  const onPartyCompleted = async (frequence, mood) => {
-    console.log(
-      `Party hosted with ${frequence} ${mood}`
-    );
-    alert(`Party was fire !`);
+
+  const onPartyCompleted = async (timestamp, cooldownRespected) => {
+    if(cooldownRespected) {
+      console.log(`Party hosted at ${timestamp}`);
+      alert(`Party was fire !`);
+    } else {
+      alert(`Too soon ! People are not back yet !`);
+    }
+  //  fetchNFTMetadata();
+  }
+    
     /*
      * Once our box NFT is minted we can fetch the metadata from our contract
      * and set it in state
      */
+    /*
     if (gameContract) {
       const boxNFT = await gameContract.checkIfUserHasNFT();
       console.log('boxNFT: ', boxNFT);
       setCharacterNFT(transformNFTData(boxNFT));
     }
   };
+  comment out for now */ 
+
   /*
    * If our gameContract is ready, let's get boxes!
    */
@@ -261,8 +267,6 @@ useEffect(() => {
   /*
    * The function we will call that interacts with out smart contract
    */
-
-  
   /*
    * We only want to run this, if we have a connected wallet
    */
@@ -332,15 +336,16 @@ const mintBoxNFTAction = (boxId) => async () => {
   }
 };
 
-const hostAPartyAction = () => async () => {
+const hostAPartyAction = (probatomint) => async () => {
   try {
     if (gameContract) {
       setPartyState('partying');
       console.log('Party in progress...');
-      const partyTxn = await gameContract.hostAParty();
+      const partyTxn = await gameContract.hostAParty(probatomint, {gasLimit:500000});
       await partyTxn.wait();
       console.log('partyTxn:', partyTxn);
       setPartyState('');
+      fetchNFTMetadata(); // new
     }
   } catch (error) {
     console.warn('hostAPartyAction Error:', error);
@@ -387,6 +392,11 @@ const hostAPartyAction = () => async () => {
   const [sequenceRating, setSequenceRating] = useState(0);
 
   //   -----   USE EFFFECT   -----
+  /*
+  useEffect(() => {
+    fetchNFTMetadata();
+}, [view]);
+*/
 
   // STATE FUNCTIONS
     // navigation
