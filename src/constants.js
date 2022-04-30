@@ -1,4 +1,4 @@
-const CONTRACT_ADDRESS = '0x44171e58F86cc2E6EC063eF022C83c9c66F3e1FE';
+const CONTRACT_ADDRESS = '0xdefa3De072ef1c9243D63C03Dd1d8acA8B1164e4';
 
 const transformNFTData = (NFTData) => {
     return {

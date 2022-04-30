@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Freckle+Face&display=swap');
+
 #soundsystem-content {
   /*  display: flex;
     justify-content: space-around;
@@ -7,7 +10,7 @@
     grid-template-rows: 0.7fr 0.2fr;
     grid-template-areas:
     "buildedsono inventory"
-    "unbuild .";
+    "unbuild score";
 }
 
 #build {
@@ -248,4 +251,13 @@
     color: var(--color3);
     background-color: var(--color1);
     box-shadow: 0 0 0.4em 0.4em var(--color4); 
+}
+
+.soundsystemrating {
+    grid-area: score;
+    justify-self: start; /* horizontal align in grid */
+    align-self: center; /* vertical align in grid */
+    font-family: 'Bungee', cursive;
+    font-weight: lighter;
+    font-size: 1.3em;
 }

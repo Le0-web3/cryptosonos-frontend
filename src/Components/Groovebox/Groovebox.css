@@ -200,7 +200,7 @@ form {
     opacity: 1;
 }
 
-#rating {
+.rating {
     grid-area: rating;
     justify-self: center; /* horizontal align in grid */
     align-self: center; /* vertical align in grid */

@@ -35,8 +35,8 @@ useEffect(() => {
                     sequence={props.sequence} 
                     bpm={props.bpm} 
                     mood={props.mood} 
-                    rating={props.rating} 
-                    setRating={props.setSequenceRating}
+                    sequenceRating={props.sequenceRating} 
+                    setSequenceRating={props.setSequenceRating}
                  />
                 <div className="card" id="grooveboxcard" onClick={(e) => {props.handleClickView(e);}}>Groovebox</div>
             </div>
@@ -50,7 +50,9 @@ useEffect(() => {
                 </div>  
                 <div className="card" id="soundsystemcard" onClick={(e) => {props.handleClickView(e);}}>Sound System</div>
             </div>      
-            <div className={`card${props.partyState}`} id="hostarea" onClick={props.hostAPartyAction(100)}>{partyText}</div>
+            <div id="lastparty">last party : {props.lastParty}</div>
+            <div className="partyrating">Score : {props.sequenceRating + props.soundSystemRating} </div>
+            <div className={`card${props.partyState}`} id="hostarea" onClick={props.hostAPartyAction((props.sequenceRating + props.soundSystemRating)*10)}>{partyText}</div>
 
         
 

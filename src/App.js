@@ -22,6 +22,7 @@ const [characters, setCharacters] = useState([]); // hold the default boxes
 const [gameContract, setGameContract] = useState(null);
 const [partyState, setPartyState] = useState('');
 const [NFTOwned, setNFTOwned] = useState([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]); // used
+const [lastParty, setLastParty] = useState(""); // timestamp
 
 // UseEffect
 useEffect(() => {
@@ -255,7 +256,11 @@ const fetchNFTMetadata = async () => {
         setNFTOwned(varNFTOwned);
         console.log("varNFTOwned : ", varNFTOwned)
         console.log("NFTOwned : ", NFTOwned)
-
+// TIMESTAMP
+        let lastTimestampTxn = await gameContract.lastHostedAt(currentAccount);
+        let lastTimestamp = ethers.BigNumber.from(lastTimestampTxn).toNumber();
+        var date = new Date(lastTimestamp * 1000);
+        setLastParty(date.toString().slice(0, 24));
       } else {
         console.log("no token id");
       }
@@ -390,6 +395,7 @@ const hostAPartyAction = (probatomint) => async () => {
     }
   });
   const [sequenceRating, setSequenceRating] = useState(0);
+  const [soundSystemRating, setSoundSystemRating] = useState(0);
 
   //   -----   USE EFFFECT   -----
   /*
@@ -418,12 +424,13 @@ const hostAPartyAction = (probatomint) => async () => {
       setBuilded={setBuilded}
       sequenceRating={sequenceRating}
       setSequenceRating={setSequenceRating}
-      mintBoxNFTAction={mintBoxNFTAction}
       hostAPartyAction={hostAPartyAction}
       partyState={partyState}
       characterNFT={characterNFT}
       NFTOwned={NFTOwned}
       setNFTOwned={setNFTOwned}
+      soundSystemRating={soundSystemRating}
+      lastParty={lastParty}
       />;
     }
     else if(view === "groovebox") {
@@ -434,8 +441,8 @@ const hostAPartyAction = (probatomint) => async () => {
       setBpm={setBpm}
       sequence={sequence}
       setSequence={setSequence}
-      rating={sequenceRating}
-      setRating={setSequenceRating}
+      sequenceRating={sequenceRating}
+      setSequenceRating={setSequenceRating}
       view={view}
       />;
     }
@@ -444,7 +451,9 @@ const hostAPartyAction = (probatomint) => async () => {
       builded={builded}
       setBuilded={setBuilded}
       NFTOwned={NFTOwned}
-      mintBoxNFTAction={mintBoxNFTAction}
+      soundSystemRating={soundSystemRating}
+      setSoundSystemRating={setSoundSystemRating}
+      mood={mood}
        />;
     }
     else if(view === "rules") {

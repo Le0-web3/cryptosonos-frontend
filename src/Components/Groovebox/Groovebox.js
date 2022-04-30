@@ -159,7 +159,6 @@ useEffect(() => {
 
 // -----   SET STATE METHODS   -----
 
-
 /*     BPM     */
 const handleBpmChange = (event) => {
     props.setBpm(event.target.value) // just for rerender
@@ -263,8 +262,8 @@ const configLoop = () => {
 
   return (
     <div id="groove-box">
-      <div id="rating">
-      <SequenceRating sequence={props.sequence} bpm={props.bpm} mood={props.mood} rating={props.rating} setRating={props.setRating} />
+      <div className="rating">
+      <SequenceRating sequence={props.sequence} bpm={props.bpm} mood={props.mood} sequenceRating={props.sequenceRating} setSequenceRating={props.setSequenceRating} />
       </div>
       <div id="startstop">
         {PlayStopButton}

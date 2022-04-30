@@ -20,3 +20,9 @@ h1 {
     text-shadow: 2px 0 0 var(--color1), -2px 0 0 var(--color2), 0 2px 0 var(--color1), 0 -2px 0 var(--color1), 1px 1px var(--color5), -1px -1px 0 var(--color1), 1px -1px 0 var(--color2), -1px 1px 0 var(--color1);
   }
 
+  h2 {
+
+    font-size: 2em;
+    text-shadow: 2px 0 0 var(--color1), -2px 0 0 var(--color2), 0 2px 0 var(--color1), 0 -2px 0 var(--color1), 1px 1px var(--color5), -1px -1px 0 var(--color1), 1px -1px 0 var(--color2), -1px 1px 0 var(--color1);
+  }
+

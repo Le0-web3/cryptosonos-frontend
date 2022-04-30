@@ -12,7 +12,7 @@ body {
   grid-template-areas:
   ". welcome connect"
   "groovebox host soundsystem"
-  ". . rules";
+  "lastparty partyscore rules";
 }
 
 #welcome {
@@ -156,6 +156,20 @@ h1 {
     box-shadow: 0.6em 0.6em 2em 0.5em var(--color4), 0 0 0.4em 0.4em var(--color3); 
     box-shadow:0 0 10em 10em transparent;
     transition: color 1s, background-color 1s, box-shadow 1s, font-weight 1s, border 1s;
+  }
 
+  .partyrating {
+    grid-area: partyscore;
+    justify-self: center; /* horizontal align in grid */
+    align-self: center; /* vertical align in grid */
+    font-weight: lighter;
+    font-size: 3em;
+    font-family: 'Bungee', cursive;
+}
 
+  #lastparty {
+    grid-area: lastparty;
+    justify-self: center; /* horizontal align in grid */
+    align-self: center; /* vertical align in grid */
+    font-size: 1.3em;
   }

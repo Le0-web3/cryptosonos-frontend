@@ -6,6 +6,8 @@ const BuildedSono = (props) => {
 // -----   USE STATE   -----
 
 
+
+
 // -----   RENDER   -----
 const renderTop = () => {
 let topteknonumber = props.builded["top"]["tekno"];

@@ -7,8 +7,8 @@ const SequenceRating = (props) => {
 
 /*     Rating     */
 useEffect(() => {
-    let currentRating = rateSequence();
-    if (currentRating == 0) {
+   let currentRating = rateSequence();
+   if (currentRating == 0) {
       RatingStars = 
       <div>
         <FaStar className='starOff' />
@@ -40,8 +40,8 @@ useEffect(() => {
         <FaStar /> 
       </div>
       }
-    
-  }, [props.sequence, props.bpm])
+    props.setSequenceRating(rateSequence()); // will help for partyRating
+  }, [props.sequence, props.bpm, props.mood])
 
   /*     Rate sequence     */
 const rateSequence = () => {
@@ -79,7 +79,7 @@ const rateSequence = () => {
         rate = 3;
       }
     } // if jungle
-    props.setRating(rate);
+    // props.setSequenceRating(rate);
     return rate;
   
   };
