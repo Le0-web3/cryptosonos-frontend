@@ -15,13 +15,13 @@ const [color, setColor] = useState("var(--color4)");
 useEffect(() => {
     let fakebeat = (16 + props.beat - 2) % 16;
 if(props.isOn) {
-    if(props.step == fakebeat && props.sequence[props.ins][props.step] == 1) {
+    if(props.step === fakebeat && props.sequence[props.ins][props.step] === 1) {
         setBackgroundColor('var(--color3)');
         setColor('var(--color1)');
-    } else if(props.step != fakebeat && props.sequence[props.ins][props.step] == 1) {
+    } else if(props.step !== fakebeat && props.sequence[props.ins][props.step] === 1) {
         setBackgroundColor('var(--color4)');
         setColor('var(--color1)');
-    } else if(props.step == fakebeat && props.sequence[props.ins][props.step] != 1) {
+    } else if(props.step === fakebeat && props.sequence[props.ins][props.step] !== 1) {
         setBackgroundColor("var(--color3)");
         setColor('var(--color1)');
     } else {
@@ -29,7 +29,7 @@ if(props.isOn) {
         setColor('var(--color4)');
     }
 } else if(!props.isOn) {
-    if(props.sequence[props.ins][props.step] == 1) {
+    if(props.sequence[props.ins][props.step] === 1) {
         setBackgroundColor('var(--color4)');
         setColor('var(--color5)');
     } else {

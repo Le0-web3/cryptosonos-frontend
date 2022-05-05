@@ -9,7 +9,7 @@ const Home = (props) => {
 const [partyText, setPartyText] = useState("Host a Party !");
 
 useEffect(() => {
-    if(props.partyState == "partying") {
+    if(props.partyState === "partying") {
         setPartyText("Partying...");
     } else  { 
         setPartyText("Host a Party !");

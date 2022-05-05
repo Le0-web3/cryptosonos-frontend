@@ -77,22 +77,22 @@ const [names, setNames] = useState(namestekno);
 // -----   USE EFFECT   -----
 /*     players     */
 useEffect(() => {
-    if(props.mood == "tekno") {
+    if(props.mood === "tekno") {
       players = playerstekno;
-    } else if(props.mood == "dub") {
+    } else if(props.mood === "dub") {
       players = playersdub;
-    } else if(props.mood == "jungle") {
+    } else if(props.mood === "jungle") {
       players = playersjungle;
     }
   }, [props.mood] )
 
 /*     names     */
 useEffect(() => {
-  if(props.mood == "tekno") {
+  if(props.mood === "tekno") {
     setNames(namestekno);
-  } else if(props.mood == "dub") {
+  } else if(props.mood === "dub") {
     setNames(namesdub);
-  } else if(props.mood == "jungle") {
+  } else if(props.mood === "jungle") {
     setNames(namesjungle);
   }
 }, [props.mood] )
@@ -112,19 +112,19 @@ useEffect(() => {
 
   /*     Themes     */
   useEffect(() => {
-    if(props.mood == "tekno") {
+    if(props.mood === "tekno") {
       document.documentElement.style.setProperty('--color1', '#000000');
       document.documentElement.style.setProperty('--color2', '#323232');
       document.documentElement.style.setProperty('--color3', '#FF1E56');
       document.documentElement.style.setProperty('--color4', '#FFAC41');
       document.documentElement.style.setProperty('--color5', '#000441');
-    } else if(props.mood == "dub") {
+    } else if(props.mood === "dub") {
       document.documentElement.style.setProperty('--color1', '#000000');
       document.documentElement.style.setProperty('--color2', '#123e01');
       document.documentElement.style.setProperty('--color3', '#fae409');
       document.documentElement.style.setProperty('--color4', '#d4291d');
       document.documentElement.style.setProperty('--color5', '#185302');
-    } else if(props.mood == "jungle") {
+    } else if(props.mood === "jungle") {
       document.documentElement.style.setProperty('--color1', '#000000');
       document.documentElement.style.setProperty('--color2', '#0a2b1b');
       document.documentElement.style.setProperty('--color3', '#8f9b45');
@@ -186,10 +186,10 @@ const handleSequence = (i, s) => {
     const instIndex = i;
     const step = s;
     let newArr = [...props.sequence];
-    if(newArr[instIndex][step] == 0) {
+    if(newArr[instIndex][step] === 0) {
       newArr[instIndex][step] = 1;
     } 
-    else if(newArr[instIndex][step] == 1) {
+    else if(newArr[instIndex][step] === 1) {
       newArr[instIndex][step] = 0;
     }
     props.setSequence(newArr);
@@ -226,7 +226,7 @@ const resetSequence = () => {
       let newArr = [...props.sequence];
         for(let i=0; i<8; i++) {
           for(let j=0; j<16; j++) {
-            if(newArr[i][j] == 1) {
+            if(newArr[i][j] === 1) {
               newArr[i][j] = 0;
             } // if
           } //for j

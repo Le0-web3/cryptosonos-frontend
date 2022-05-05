@@ -14,9 +14,9 @@ function MiniSwitch(props) {
     //   -----   USE EFFECT   -----
     /*     Background Color     */
     useEffect(() => {
-        if(props.sequence[props.ins][props.step] == 1) {
+        if(props.sequence[props.ins][props.step] === 1) {
             setBackgroundColor('var(--color4)')
-        } else if(props.sequence[props.ins][props.step] != 1) {
+        } else if(props.sequence[props.ins][props.step] !== 1) {
             setBackgroundColor("var(--color2)")
         }
     }, [props.sequence]);
@@ -42,19 +42,19 @@ const MiniGroovebox = (props) => {
 
   /*     Themes     */
   useEffect(() => {
-    if(props.mood == "tekno") {
+    if(props.mood === "tekno") {
       document.documentElement.style.setProperty('--color1', '#000000');
       document.documentElement.style.setProperty('--color2', '#323232');
       document.documentElement.style.setProperty('--color3', '#FF1E56');
       document.documentElement.style.setProperty('--color4', '#FFAC41');
       document.documentElement.style.setProperty('--color5', '#000441');
-    } else if(props.mood == "dub") {
+    } else if(props.mood === "dub") {
       document.documentElement.style.setProperty('--color1', '#000000');
       document.documentElement.style.setProperty('--color2', '#123e01');
       document.documentElement.style.setProperty('--color3', '#fae409');
       document.documentElement.style.setProperty('--color4', '#d4291d');
       document.documentElement.style.setProperty('--color5', '#185302');
-    } else if(props.mood == "jungle") {
+    } else if(props.mood === "jungle") {
       document.documentElement.style.setProperty('--color1', '#000000');
       document.documentElement.style.setProperty('--color2', '#0a2b1b');
       document.documentElement.style.setProperty('--color3', '#8f9b45');

@@ -4,30 +4,6 @@ import './Soundsystem.css';
 
 import BuildedSono from './BuildedSono';
 
-//     for testing purpose, will have to get from SC
-const userInventory = {
-    top: {
-        tekno: 4,
-        dub: 2,
-        jungle: 1
-    },
-    mid : {
-        tekno: 2,
-        dub: 3,
-        jungle: 7  
-    },
-    kick : {
-        tekno: 3,
-        dub: 2,
-        jungle: 1  
-    },
-    sub : {
-        tekno: 3,
-        dub: 10,
-        jungle: 3  
-    }
-}
-
 const Soundsystem = (props) => {
 
 // -----   USE STATE   -----
@@ -70,7 +46,7 @@ When he drags drops (or click)s we update builded and remaining.
         let varBuilded = {...props.builded}; // so it trigger re-render. Way to go with object states
         let varRemaining = {...remaining};
     //if top and top builded < 2, add to builded and remove 1 from remaining
-        if(targetbox == "top") {
+        if(targetbox === "top") {
             if(props.builded[targetbox]["tekno"] + props.builded[targetbox]["dub"] + props.builded[targetbox]["jungle"] < 2 && remaining[targetbox][targetmood] > 0) {
             //    let varBuilded = props.builded;
                 varBuilded[targetbox][targetmood] += 1; 
@@ -82,7 +58,7 @@ When he drags drops (or click)s we update builded and remaining.
         } // if top
 
     //if not top and top builded < 4, add to builded and remove 1 from remaining
-    if(targetbox != "top") {
+    if(targetbox !== "top") {
         if(props.builded[targetbox]["tekno"] + props.builded[targetbox]["dub"] + props.builded[targetbox]["jungle"] < 4 && remaining[targetbox][targetmood] > 0) {
         //    let varBuilded = props.builded;
             varBuilded[targetbox][targetmood] += 1; 
@@ -142,7 +118,7 @@ const buildedTotalBoxes = () => { // criteria 1, 1 point per box
     for(let i = 0; i < Object.values(props.builded).length; i++) {
       sum += Object.values(Object.values(props.builded)[i]).reduce((a, b) => a + b, 0)
     }
-    if(sum == 0) { // boombox
+    if(sum === 0) { // boombox
         return 0.5;
     } else {
         return sum;
@@ -170,9 +146,9 @@ const buildedRatio = () => { // criteria 3, 1 point if perfect ratio
     const mids = Object.values(Object.values(props.builded)[1]).reduce((a, b) => a + b, 0)
     const kicks = Object.values(Object.values(props.builded)[2]).reduce((a, b) => a + b, 0)
     const subs = Object.values(Object.values(props.builded)[3]).reduce((a, b) => a + b, 0)
-        if(tops == 1 && mids == 2 && kicks == 2 && subs == 2) {
+        if(tops === 1 && mids === 2 && kicks === 2 && subs === 2) {
             return 1;
-        } else if(tops == 2 && mids == 4 && kicks == 4 && subs == 4) {
+        } else if(tops === 2 && mids === 4 && kicks === 4 && subs === 4) {
             return 1;
         } else {return 0;}
     };
@@ -182,7 +158,7 @@ const fullSoundGoodMood = () => { // criteria 4, 1 point if full sound good mood
         for(let i = 0; i < Object.values(props.builded).length; i++) {
           sum += Object.values(props.builded)[i][props.mood];
         }
-        if(sum == 14) {
+        if(sum === 14) {
             return 1;
         } else {return 0;}
     };
@@ -245,7 +221,6 @@ useEffect(() => {
             jungle: props.NFTOwned[11]-props.builded.sub.jungle
         }
     });
-    let score = rateSoundSystem();
     props.setSoundSystemRating(rateSoundSystem());
 }, [props.NFTOwned, props.builded] )
 

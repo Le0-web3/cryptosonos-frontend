@@ -1,5 +1,6 @@
-const CONTRACT_ADDRESS = '0xdefa3De072ef1c9243D63C03Dd1d8acA8B1164e4';
+const CONTRACT_ADDRESS = '0x0ef9eb821A29905e33df09931697069a76bfF3f2';
 
+/*
 const transformNFTData = (NFTData) => {
     return {
    //   boxIndex: NFTData.boxIndex.toNumber(),
@@ -8,5 +9,8 @@ const transformNFTData = (NFTData) => {
       imageURI: NFTData.imageURI,
     };
   };
+  */
   
-  export { CONTRACT_ADDRESS, transformNFTData };
+  
+  // export { CONTRACT_ADDRESS, transformNFTData };
+ export { CONTRACT_ADDRESS };
