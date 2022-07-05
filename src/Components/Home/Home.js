@@ -52,7 +52,7 @@ useEffect(() => {
             </div>      
             <div id="lastparty">last party : {props.lastParty}</div>
             <div className="partyrating">Score : {props.sequenceRating + props.soundSystemRating} </div>
-            <div className={`card${props.partyState}`} id="hostarea" onClick={props.hostAPartyAction(100*10)}>{partyText}</div>
+            <div className={`card${props.partyState}`} id="hostarea" onClick={props.hostAPartyAction((props.sequenceRating + props.soundSystemRating)*10)}>{partyText}</div>
     </div>
 
 

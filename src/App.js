@@ -112,55 +112,63 @@ const checkIfWalletIsConnected = async () => {
 };
 
 const checkNetwork = async () => {
-  const { ethereum } = window;
-  let chainId = await ethereum.request({ method: 'eth_chainId' });
-  console.log("Connected to chain " + chainId);
+  try { // new test
+    const { ethereum } = window;
+    let chainId = await ethereum.request({ method: 'eth_chainId' });
+    console.log("Connected to chain " + chainId);
 
-  // String, hex code of the chainId of the Rinkebey test network
-  const rinkebyChainId = "0x4"; 
-  if (chainId !== rinkebyChainId) {
-    alert("You are not connected to the Rinkeby Test Network!");
+    // String, hex code of the chainId of the Rinkebey test network
+    const rinkebyChainId = "0x4"; 
+    if (chainId !== rinkebyChainId) {
+      alert("You are not connected to the Rinkeby Test Network!");
+    }
+  } catch (error) { // new test
+    console.log(error);
   }
 }
 
 //   -----   fetching users' data on chain   -----
 const fetchNFTMetadata = async () => {
   console.log('Checking for Character NFT on address:', currentAccount);
-  const provider = new ethers.providers.Web3Provider(window.ethereum);
-  const signer = provider.getSigner();
-  const gameContract = new ethers.Contract(
-    CONTRACT_ADDRESS,
-    myEpicGame.abi,
-    signer
-  );
-      const txn5 = await gameContract.getTokenIds(currentAccount);
-      if(txn5 != null) {
-        let txn5Cleaned = []; // array of token id
-        txn5.forEach(token => {
-            txn5Cleaned.push(
-            ethers.BigNumber.from(token).toNumber()
-          );
-        });
-        let boxIndexArray = [];
-        for(let i = 0; i<txn5Cleaned.length; i++) {
-          let boxIndexOwned = await gameContract.getNftHolderAttributes(txn5Cleaned[i]).then(function(receipt){
-          console.log("receipt : ",receipt)
-          boxIndexArray.push(ethers.BigNumber.from(receipt.boxIndex).toNumber());
+  try { // new test
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
+    const signer = provider.getSigner();
+    const gameContract = new ethers.Contract(
+      CONTRACT_ADDRESS,
+      myEpicGame.abi,
+      signer
+    );
+        const txn5 = await gameContract.getTokenIds(currentAccount);
+        if(txn5 != null) {
+          let txn5Cleaned = []; // array of token id
+          txn5.forEach(token => {
+              txn5Cleaned.push(
+              ethers.BigNumber.from(token).toNumber()
+            );
           });
+          let boxIndexArray = [];
+          for(let i = 0; i<txn5Cleaned.length; i++) {
+            let boxIndexOwned = await gameContract.getNftHolderAttributes(txn5Cleaned[i]).then(function(receipt){
+            console.log("receipt : ",receipt)
+            boxIndexArray.push(ethers.BigNumber.from(receipt.boxIndex).toNumber());
+            });
+          }
+          console.log("boxIndexArray : ", boxIndexArray)
+          let varNFTOwned = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+          for(let i = 0; i < boxIndexArray.length; i++) {
+            varNFTOwned[boxIndexArray[i]] +=1;
+          }
+          setNFTOwned(varNFTOwned);
+          console.log("NFTOwned : ", NFTOwned)
+          let lastTimestampTxn = await gameContract.lastHostedAt(currentAccount);
+          let lastTimestamp = ethers.BigNumber.from(lastTimestampTxn).toNumber();
+          var date = new Date(lastTimestamp * 1000);
+          setLastParty(date.toString().slice(0, 24));
+        } else {
+          console.log("no token id");
         }
-        console.log("boxIndexArray : ", boxIndexArray)
-        let varNFTOwned = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-        for(let i = 0; i < boxIndexArray.length; i++) {
-          varNFTOwned[boxIndexArray[i]] +=1;
-        }
-        setNFTOwned(varNFTOwned);
-        console.log("NFTOwned : ", NFTOwned)
-        let lastTimestampTxn = await gameContract.lastHostedAt(currentAccount);
-        let lastTimestamp = ethers.BigNumber.from(lastTimestampTxn).toNumber();
-        var date = new Date(lastTimestamp * 1000);
-        setLastParty(date.toString().slice(0, 24));
-      } else {
-        console.log("no token id");
+      } catch (error) { // new test
+        console.log(error);
       }
 }; // fetchNFTMetadata
 
@@ -191,6 +199,8 @@ const hostAPartyAction = (probatomint) => async () => {
       const partyTxn = await gameContract.hostAParty(probatomint, {gasLimit:500000});
       await partyTxn.wait();
       console.log('partyTxn:', partyTxn);
+      console.log("Score x 10 : " ,(sequenceRating + soundSystemRating)*10);
+      console.log("probatomint", probatomint);
       setPartyState('');
       fetchNFTMetadata(); // new
     }
