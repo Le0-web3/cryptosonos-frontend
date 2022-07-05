@@ -12,8 +12,7 @@ const Soundsystem = (props) => {
 We use remaining for display.
 When he drags drops (or click)s we update builded and remaining.
 */
-    /* moving this state in App
-    const [builded, setBuilded] = useState(initialBuildedState); */
+    
     const [remaining, setRemaining] = useState({
         top: {
             tekno: props.NFTOwned[0],
@@ -124,15 +123,7 @@ const buildedTotalBoxes = () => { // criteria 1, 1 point per box
         return sum;
     }
   };
-/*
-const buildedBoxesMood = () => { // criteria 2, 0.5 point per box mood compliant
-    let sum = 0;
-    for(let i = 0; i < Object.values(props.builded).length; i++) {
-      sum += Object.values(props.builded)[i][props.mood]*0.5;
-    };
-    return sum;
-  };
-*/
+
 const buildedBoxesMood = () => { // criteria 2, 0.5 point per box mood compliant
 let sum = 0;
 for(let i = 0; i < Object.values(props.builded).length; i++) {
@@ -162,41 +153,8 @@ const fullSoundGoodMood = () => { // criteria 4, 1 point if full sound good mood
             return 1;
         } else {return 0;}
     };
-    
-    /*
-    setRemaining({
-        top: {
-            tekno: 4,
-            dub: 2,
-            jungle: 1
-        },
-        mid : {
-            tekno: 2,
-            dub: 3,
-            jungle: 7  
-        },
-        kick : {
-            tekno: 3,
-            dub: 2,
-            jungle: 1  
-        },
-        sub : {
-            tekno: 3,
-            dub: 10,
-            jungle: 3  
-        }
-    }) */
-
 
 // -----   USE EFFECT   -----
-    /*     refresh     */
-    // !!!!! not working
-    /*
-    useEffect(() => {
-        console.log("refreshing")
-
-    }, [refresh] )
-    */
 
 useEffect(() => {
     setRemaining({
@@ -223,7 +181,6 @@ useEffect(() => {
     });
     props.setSoundSystemRating(rateSoundSystem());
 }, [props.NFTOwned, props.builded] )
-
 
 
     return (

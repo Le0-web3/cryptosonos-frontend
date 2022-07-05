@@ -44,8 +44,9 @@ useEffect(() => {
 // Add a callback method that will fire when this event is received
   const onBoxMint = async (sender, tokenId, boxIndex) => {
     console.log(`BoxNFTMinted - sender: ${sender} tokenId: ${tokenId.toNumber()} boxIndex: ${boxIndex.toNumber()}`);
-    alert(`Your NFT is all done -- see it here: https://testnets.opensea.io/assets/${gameContract.toString()}/${tokenId.toNumber()}`);
+    alert(`Your NFT is all done -- see it here: https://testnets.opensea.io/assets/${CONTRACT_ADDRESS}/${tokenId.toNumber()}`);
   }
+  
   const onPartyCompleted = async (timestamp, cooldownRespected) => {
     if(cooldownRespected) {
       console.log(`Party hosted at ${timestamp}`);

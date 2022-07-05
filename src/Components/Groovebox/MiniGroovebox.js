@@ -64,7 +64,7 @@ const MiniGroovebox = (props) => {
   }, [props.mood] )
 
 
-// -----   SET STATE METHODS   -----
+// -----   RETURN   -----
 
 
   return (

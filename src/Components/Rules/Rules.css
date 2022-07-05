@@ -22,7 +22,25 @@ h1 {
 
   h2 {
 
-    font-size: 2em;
+    font-size: 1.5em;
+    margin: 0.7em 0 0.5em 0;
     text-shadow: 2px 0 0 var(--color1), -2px 0 0 var(--color2), 0 2px 0 var(--color1), 0 -2px 0 var(--color1), 1px 1px var(--color5), -1px -1px 0 var(--color1), 1px -1px 0 var(--color2), -1px 1px 0 var(--color1);
   }
 
+  @media only screen and (max-width: 720px) { /* for mobile screen */
+    #rulescontent {
+      overflow: auto;
+      height: 100%;
+    }    
+    html, body
+{
+    height: 100%;
+    margin: 0;
+    overflow: auto;
+}
+h1 {
+
+  font-size: 1.5em;
+}
+
+  }

@@ -51,3 +51,13 @@
     background-color: var(--color1);
     box-shadow: 0 0 0.4em 0.4em var(--color4); 
   }
+
+  @media only screen and (max-width: 720px) { /* for mobile screen */
+    #navbar {
+      padding: 0.5%;
+    }
+    .navbarItem {
+        width: 25vw;
+        font-size: 0.9em;
+     }
+  }

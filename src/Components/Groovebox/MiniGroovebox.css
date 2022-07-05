@@ -58,3 +58,17 @@
      
      box-shadow: 0.06em 0.06em 0.2em 0.05em var(--color1), 0 0 0.04em 0.04em var(--color1); 
  }
+
+ @media only screen and (max-width: 720px) { /* for mobile screen */
+    #mini-groove-box {
+        width: 28vw;
+        padding: 0.5%;
+     }
+    .miniswitch {
+        width: 1vw;
+        height: 0.7vh;
+    }
+    #minidisplay {
+        width: 24vw;
+    }
+  }

@@ -29,8 +29,6 @@ for(let i = 0; i < topjunglenumber; i++) {
   myJungleArr.push(i);
 }
 
-// faut faire des Cards
-
     // Render Methods
     return (
 

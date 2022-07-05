@@ -206,3 +206,64 @@ form {
     align-self: center; /* vertical align in grid */
     margin-right: 30%;
 }
+
+@media only screen and (max-width: 720px) { /* for mobile screen */
+    #groove-box {
+      zoom: 11%;
+      margin-top: 10%;
+      width: 95%;
+      display: grid;
+      grid-template-columns: 0.8fr 0.2fr;
+      grid-template-rows: 0.2fr 0.2fr 0.2fr 0.2fr;
+      grid-template-areas:
+      "startstop bpm"
+      "display rating"
+      "switchesandvolume switchesandvolume"
+      "reset reset";
+    }    
+    .volume {
+        display: none;
+    }
+    .switch {
+        width: 45vw;
+        height: 45vh;
+        margin: 00;
+        font-size: 8em;
+    }
+    #startstop {
+        margin-top: 5%;
+        zoom: 800%;
+    }
+    #displaywrapper {
+        zoom: 400%;
+    }
+    #bankbutton {
+        zoom: 200%;
+    }
+    #display {
+        width: 15em;
+        margin: 0;
+        padding: 1%;
+        font-size: 2em;
+    }
+    #bpm {
+        font-size: 8em;
+    }
+    #bpmdisplay {
+        width: 4em;
+        margin-top: 1em;
+    }
+    .slider {
+        zoom: 800%;
+    }
+    #resetbutton {
+        zoom: 800%;
+        font-weight: bold;
+    }
+    .rating {
+        zoom: 800%;
+    }
+    .switchesandvolume {
+        padding: 10%;
+    }
+  }

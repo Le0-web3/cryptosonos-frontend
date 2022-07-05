@@ -6,6 +6,20 @@ const Rules = () => {
     return (
     <div id="rulescontent">
         <h1>How to PLay</h1>
+            <h2>Set-up</h2>
+                <div>
+                    If you don't have a Metamask, download browser extension <a href="https://metamask.io/">here</a> and create an account.
+                </div>
+                <div>
+                    In Metamask networks, click on "Show test networks", and select Rinkeby.
+                </div>
+                <div>
+                    Go get some fake ETH <a href="https://rinkebyfaucet.com/">here</a>.
+                </div>
+                <div>
+                    You are now ready to play !
+                </div>
+                <br />
             <h2>Overwiew</h2>
                 <div>
                     CryptoSonos is a free mini-game built for Aurora ! Make music, build sound systems, loot NFTs !

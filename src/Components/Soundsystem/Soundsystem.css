@@ -5,6 +5,7 @@
   /*  display: flex;
     justify-content: space-around;
     */
+    height: 90vh;
     display: grid;
     grid-template-columns: 0.7fr 0.3fr;
     grid-template-rows: 0.7fr 0.2fr;
@@ -261,3 +262,42 @@
     font-weight: lighter;
     font-size: 1.3em;
 }
+
+@media only screen and (max-width: 720px) { /* for mobile screen */
+    #soundsystem-content {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.2fr 0.4fr 0.2fr 0.2fr;
+        grid-template-areas:
+        "buildedsono"
+        "inventory"
+        "unbuild" 
+        "score";
+        zoom: 50%;
+    }    
+    #build {
+        zoom: 40%;
+        padding: 5% 0 00 0;
+    }
+    #inventory {
+        margin: auto;
+        width: 80%;
+        font-size: 2em;
+    }
+    .soundsystemrating {
+        margin: auto;
+        width: 80%;
+        padding-top: 2%;
+        font-size: 2em;
+    }
+    .button {
+        width: 15em;
+        height: 2em;
+        font-size: 2em;
+        margin-top: 2%;
+    }
+    .category {
+        padding: 0.1em 0 0.1em 0;
+        font-size: 0.7em;
+    }
+  }

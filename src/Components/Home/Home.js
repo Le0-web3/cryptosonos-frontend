@@ -23,7 +23,7 @@ useEffect(() => {
       <div id="welcome">
         <h1>Welcome to <div id="title">Crypto Sonos</div></h1>
       </div>
-            <div className="card" id="rulescard" onClick={(e) => {props.handleClickView(e);}}>Rules</div>
+            <div className="card" id="rulescard" onClick={(e) => {props.handleClickView(e);}}>How to PLay</div>
         
             <div className="buttoncolumn" id="grooveboxarea">        
                 <MiniGroovebox    
@@ -38,7 +38,7 @@ useEffect(() => {
                     sequenceRating={props.sequenceRating} 
                     setSequenceRating={props.setSequenceRating}
                  />
-                <div className="card" id="grooveboxcard" onClick={(e) => {props.handleClickView(e);}}>Groovebox</div>
+                <div className="card" id="grooveboxcard" onClick={(e) => {props.handleClickView(e);}}>Groove Box</div>
             </div>
             <div className="buttoncolumn" id="soundsystemarea">     
                 <div className="sonoimage"> 
@@ -52,10 +52,7 @@ useEffect(() => {
             </div>      
             <div id="lastparty">last party : {props.lastParty}</div>
             <div className="partyrating">Score : {props.sequenceRating + props.soundSystemRating} </div>
-            <div className={`card${props.partyState}`} id="hostarea" onClick={props.hostAPartyAction((props.sequenceRating + props.soundSystemRating)*10)}>{partyText}</div>
-
-        
-
+            <div className={`card${props.partyState}`} id="hostarea" onClick={props.hostAPartyAction(100*10)}>{partyText}</div>
     </div>
 
 
