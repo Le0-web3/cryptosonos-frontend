@@ -118,9 +118,9 @@ const checkNetwork = async () => {
     console.log("Connected to chain " + chainId);
 
     // String, hex code of the chainId of the Rinkebey test network
-    const rinkebyChainId = "0x4"; 
-    if (chainId !== rinkebyChainId) {
-      alert("You are not connected to the Rinkeby Test Network!");
+    const goerliChainId = "0x5"; 
+    if (chainId !== goerliChainId) {
+      alert("You are not connected to the Goerli Test Network!");
     }
   } catch (error) { // new test
     console.log(error);
