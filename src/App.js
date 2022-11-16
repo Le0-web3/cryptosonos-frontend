@@ -137,7 +137,7 @@ const checkNetwork = async () => {
     console.log("Connected to chain " + chainId);
 
     // String, hex code of the chainId of the Rinkebey test network
-    const auroraTestnetChainId = '1313161555'; 
+    const auroraTestnetChainId = '0x4e454152'; 
     if (chainId !== auroraTestnetChainId) {
       alert("You are not connected to the Aurora Test Network!");
     }
