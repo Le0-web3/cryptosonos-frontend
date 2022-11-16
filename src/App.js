@@ -111,6 +111,7 @@ const checkIfWalletIsConnected = async () => {
   }
 };
 
+/* eth goerli
 const checkNetwork = async () => {
   try { // new test
     const { ethereum } = window;
@@ -121,6 +122,24 @@ const checkNetwork = async () => {
     const goerliChainId = "0x5"; 
     if (chainId !== goerliChainId) {
       alert("You are not connected to the Goerli Test Network!");
+    }
+  } catch (error) { // new test
+    console.log(error);
+  }
+}
+*/
+
+// aurora testnet
+const checkNetwork = async () => {
+  try { // new test
+    const { ethereum } = window;
+    let chainId = await ethereum.request({ method: 'eth_chainId' });
+    console.log("Connected to chain " + chainId);
+
+    // String, hex code of the chainId of the Rinkebey test network
+    const auroraTestnetChainId = '1313161555'; 
+    if (chainId !== auroraTestnetChainId) {
+      alert("You are not connected to the Aurora Test Network!");
     }
   } catch (error) { // new test
     console.log(error);
