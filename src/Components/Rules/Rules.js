@@ -38,7 +38,7 @@ const Rules = () => {
             <h2>Host A Party</h2>
                 <div>
                 Once you have composed a groovebox sequence and maybe built a sound system, let's throw a party and hope for a NFT drop !
-                The better your party score, the higher your chances to drop a NFT.
+                The better your party score, the higher your chances to drop a NFT. You can host 1 party per day.
                 </div>
     </div>
     );
