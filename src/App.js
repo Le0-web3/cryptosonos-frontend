@@ -25,6 +25,7 @@ const [lastParty, setLastParty] = useState(""); // timestamp
 //   -----   gameContract   -----
 useEffect(() => {
   const { ethereum } = window;
+  console.log('window', window);
   if (ethereum) {
     const provider = new ethers.providers.Web3Provider(ethereum);
     const signer = provider.getSigner();
@@ -137,7 +138,7 @@ const checkNetwork = async () => {
     console.log("Connected to chain " + chainId);
 
     // String, hex code of the chainId of the Rinkebey test network
-    const auroraTestnetChainId = '0x4e454152'; 
+    const auroraTestnetChainId = '0x4e454153'; 
     if (chainId !== auroraTestnetChainId) {
       alert("You are not connected to the Aurora Test Network!");
     }
@@ -157,6 +158,7 @@ const fetchNFTMetadata = async () => {
       myEpicGame.abi,
       signer
     );
+        console.log("before tx5 : currentAccount ", currentAccount)
         const txn5 = await gameContract.getTokenIds(currentAccount);
         if(txn5 != null) {
           let txn5Cleaned = []; // array of token id

@@ -11,10 +11,10 @@ const Rules = () => {
                     If you don't have a Metamask, download browser extension <a href="https://metamask.io/">here</a> and create an account.
                 </div>
                 <div>
-                    In Metamask networks, click on "Show test networks", and select Rinkeby.
+                    Go to <a href="https://aurora.dev/start">aurora.dev/start</a>, in the Aurora Network section, select the testnet tab and click on Add Network.
                 </div>
                 <div>
-                    Go get some fake ETH <a href="https://rinkebyfaucet.com/">here</a>.
+                    Go get some fake ETH <a href="https://aurora.dev/faucet">here</a>.
                 </div>
                 <div>
                     You are now ready to play !
