@@ -112,7 +112,7 @@ return rate;
 };
 
 //  ----- Criterias   -----
-const buildedTotalBoxes = () => { // criteria 1, 1 point per box
+const buildedTotalBoxes = () => { // criteria 1, 1 point per box. 0.5
     let sum = 0;
     for(let i = 0; i < Object.values(props.builded).length; i++) {
       sum += Object.values(Object.values(props.builded)[i]).reduce((a, b) => a + b, 0)
