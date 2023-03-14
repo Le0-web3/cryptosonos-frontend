@@ -112,7 +112,7 @@ const checkIfWalletIsConnected = async () => {
   }
 };
 
-/* eth goerli
+// eth goerli
 const checkNetwork = async () => {
   try { // new test
     const { ethereum } = window;
@@ -128,9 +128,10 @@ const checkNetwork = async () => {
     console.log(error);
   }
 }
-*/
+
 
 // aurora testnet
+/*
 const checkNetwork = async () => {
   try { // new test
     const { ethereum } = window;
@@ -146,6 +147,7 @@ const checkNetwork = async () => {
     console.log(error);
   }
 }
+*/
 
 //   -----   fetching users' data on chain   -----
 const fetchNFTMetadata = async () => {

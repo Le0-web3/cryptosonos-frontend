@@ -7,6 +7,7 @@ import SequenceRating from './../SequenceRating/SequenceRating.js';
 const Home = (props) => {
 
 const [partyText, setPartyText] = useState("Host a Party !");
+const [probatomint, setProbatomint] = useState(0.5);
 
 useEffect(() => {
     if(props.partyState === "partying") {
@@ -16,7 +17,18 @@ useEffect(() => {
     } 
     }, [props.partyState] )
 
-
+// give proba to mint or 261 or 262 or 263 if full sound
+useEffect(() => {
+    if(props.sequenceRating + props.soundSystemRating < 26) {
+        setProbatomint((props.sequenceRating + props.soundSystemRating)*10);
+    } else if(props.sequenceRating + props.soundSystemRating == 26 && props.mood == "tekno") {
+        setProbatomint(261);
+    } else if(props.sequenceRating + props.soundSystemRating == 26 && props.mood == "dub") {
+        setProbatomint(262);
+    } else if(props.sequenceRating + props.soundSystemRating == 26 && props.mood == "jungle") {
+        setProbatomint(263);
+    }
+    }, [props.sequenceRating, props.soundSystemRating] )
 
     return (
     <div id="homecontent">
@@ -52,7 +64,7 @@ useEffect(() => {
             </div>      
             <div id="lastparty">last party : {props.lastParty}</div>
             <div className="partyrating">Score : {props.sequenceRating + props.soundSystemRating} </div>
-            <div className={`card${props.partyState}`} id="hostarea" onClick={props.hostAPartyAction((props.sequenceRating + props.soundSystemRating)*10)}>{partyText}</div>
+            <div className={`card${props.partyState}`} id="hostarea" onClick={props.hostAPartyAction(probatomint)}>{partyText}</div>
     </div>
 
 
