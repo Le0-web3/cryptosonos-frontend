@@ -11,10 +11,7 @@ const Rules = () => {
                     If you don't have a Metamask, download browser extension <a href="https://metamask.io/">here</a> and create an account.
                 </div>
                 <div>
-                    Go to <a href="https://aurora.dev/start">aurora.dev/start</a>, in the Aurora Network section, select the testnet tab and click on Add Network.
-                </div>
-                <div>
-                    Go get some fake ETH <a href="https://aurora.dev/faucet">here</a>.
+                    Go get some Goerli ETH <a href="https://faucetlink.to/goerli">here</a>.
                 </div>
                 <div>
                     You are now ready to play !
@@ -22,7 +19,7 @@ const Rules = () => {
                 <br />
             <h2>Overwiew</h2>
                 <div>
-                    CryptoSonos is a free mini-game built for Aurora ! Make music, build sound systems, loot NFTs !
+                    CryptoSonos is a free mini-game built for Avalanche ! Make music, build sound systems, loot NFTs !
                 </div>
                 <br />
             <h2>Build a Groovebox Sequence</h2>
